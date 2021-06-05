@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  ngircd:
+    image: ghcr.io/linuxserver/ngircd
+    container_name: ngircd
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - /etc/localtime:/etc/localtime
+    volumes:
+      - ./ngircd/config:/config
+    ports:
+      - 6667:6667
+    restart: unless-stopped

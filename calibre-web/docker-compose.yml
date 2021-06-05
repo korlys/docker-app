@@ -1,0 +1,30 @@
+version: "2.1"
+services:
+  calibre-web:
+    image: ghcr.io/linuxserver/calibre-web
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - DOCKER_MODS=linuxserver/calibre-web:calibre
+    volumes:
+      - /path/to/data:/config
+      - /path/to/calibre/library:/books
+    ports:
+      - 8083:8083
+    restart: unless-stopped
+
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./conf:/etc/mysql/conf.d
+      - /etc/localtime:/etc/localtime
+    environment:
+      - PUID=1000
+      - PGID=1000        
+      - MYSQL_ROOT_PASSWORD=example
+      - MYSQL_DATABASE=USER_DB_NAME #optional
+      - MYSQL_USER=MYSQL_USER #optional
+      - MYSQL_PASSWORD=DATABASE_PASSWORD #optional

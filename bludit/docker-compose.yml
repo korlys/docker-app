@@ -1,0 +1,22 @@
+version: '3'
+
+networks:
+  bludit:
+    external: false
+    
+services:
+  bludit:
+    image: bludit/docker:latest
+    container_name: bludit
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    networks:
+      - bludit
+    volumes:
+      - ./bludit:/usr/share/nginx/html/bl-content
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "9090:80"

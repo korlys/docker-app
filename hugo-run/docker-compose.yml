@@ -1,0 +1,16 @@
+version: '3'
+services:
+  hugo-run:
+    build: .
+    ports: 
+      - "1313:1313"
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./hugo:/hugo
+      - ./run.sh:/run.sh
+    entrypoint:
+      - sh
+      - /run.sh

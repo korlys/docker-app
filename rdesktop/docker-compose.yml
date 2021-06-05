@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+  rdesktop:
+    image: ghcr.io/linuxserver/rdesktop
+    container_name: rdesktop
+    privileged: true #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock #optional
+      - /path/to/data:/config #optional
+    ports:
+      - 3389:3389
+    shm_size: "1gb" #optional
+    restart: unless-stopped

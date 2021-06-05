@@ -1,0 +1,12 @@
+version: '3'
+
+services: 
+  theia:
+    image: theiaide/theia:next
+    ports:
+      - 3000:3000
+    restart: always
+    environment: 
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./project:/home/project:cached

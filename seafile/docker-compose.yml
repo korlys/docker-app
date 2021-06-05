@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  seafile:
+    external: false
+    
+services:
+  seafile:
+    image: seafileltd/seafile:latest 
+    container_name: seafile
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - SEAFILE_SERVER_HOSTNAME=t1.develop.oribos.cn
+      - SEAFILE_ADMIN_EMAIL=denalon@qq.com
+      - SEAFILE_ADMIN_PASSWORD=your_password
+    restart: always
+    privileged: true
+    networks:
+      - seafile
+    volumes:
+      - ./seafile-data:/shared
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "9610:8000"
+      - "8082:8082"

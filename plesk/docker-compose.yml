@@ -1,0 +1,15 @@
+version: '3'
+
+services: 
+  plesk:
+    image: plesk/plesk
+    ports:
+      - 80:80
+      - 443:443
+      - 8880:8880
+      - 8443:8443
+    restart: always
+    environment: 
+      - TZ=Asia/Shanghai
+    networks: 
+      - default

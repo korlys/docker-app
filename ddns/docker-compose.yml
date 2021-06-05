@@ -1,0 +1,15 @@
+
+
+version: '3'
+
+    
+services:
+  server:
+    image: chenhw2/aliyun-ddns-cli
+    container_name: ddns
+    privileged: true
+    environment:
+      - "AKID=LTAI4GDFXXXXX"
+      - "AKSCT=atFgYY54DTMXXXXXXX"
+      - "DOMAIN=test.xxxx.cn"
+

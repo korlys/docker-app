@@ -1,0 +1,22 @@
+version: "3"
+services:
+  nextcloud:
+    image: linuxserver/nextcloud
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./nextcloud/appdata:/config
+      - ./nextcloud/data:/data
+    networks:
+      - mynet
+    ports:
+      - 443:443
+    restart: unless-stopped
+
+networks:
+  mynet:
+    external:
+      name: mynet

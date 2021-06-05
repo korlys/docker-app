@@ -1,0 +1,14 @@
+version: '3'
+
+services: 
+  kodexplorer:
+    image: kodcloud/kodexplorer
+    ports:
+      - 9680:80
+    volumes: 
+      - ./data:/var/www/html
+    restart: always
+    environment: 
+      - TZ=Asia/Shanghai
+    networks: 
+      - default

@@ -1,0 +1,32 @@
+version: '3'
+
+networks:
+  hello:
+    external: false
+    
+services:
+  server:
+    image: openjdk:8u292-jdk-oraclelinux7
+    container_name: hello
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    networks:
+      - hello
+    volumes:
+      - ./hellohao:/hellohao
+      - ./Tbedmain:/Tbedmain
+      - ./data:/data/upload_tmp
+      - ./hellodata:/HellohaoData
+      - ./application.properties:/application.properties
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "8088:8088"
+    command: [
+        './hellohao',
+        'java',
+        '-jar',
+        'Tbedmain'
+        ]

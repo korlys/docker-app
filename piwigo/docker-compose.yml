@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  piwigo:
+    image: ghcr.io/linuxserver/piwigo
+    container_name: piwigo
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./appdata/config:/config
+      - ./appdata/gallery:/gallery
+    ports:
+      - 9480:80
+    restart: unless-stopped
+    depends_on:
+      - piwigodb
+
+  piwigodb:
+    image: mariadb
+    container_name: piwigodb
+    volumes:
+        - database:/var/lib/mysql:rw
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: 123456
+        MYSQL_DATABASE: piwigodb
+        MYSQL_USER: piwigo
+        MYSQL_PASSWORD: 123456
+volumes:
+    database:

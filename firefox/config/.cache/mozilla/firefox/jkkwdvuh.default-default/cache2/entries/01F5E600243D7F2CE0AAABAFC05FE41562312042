@@ -1,0 +1,856 @@
+;(function ($) {
+    // 以下是前端所需要的所有变量
+    // 公共变量
+    {
+        var js_pop_login_panel = $('#js-pop-login-panel'), //顶部导航栏登录
+            js_pop_register_panel = $('.js-pop-register-panel'), //顶部导航栏注册
+            js_pop_area_user = $('#js-pop-area-user'), //用户弹窗区域
+            js_pop_user = $('.js-pop-user'), //用户相关弹窗
+            js_pop_close = $('.js-pop-close'), //关闭弹窗
+            js_register_now = $('#js-register-now'), //立即注册
+            js_return_login = $('#js-return-login'), //返回登录
+            js_forgot_pwd = $('#js-forgot-pwd'), //忘记密码
+            js_error_tip = $('.js-error-tip'), //错误提示
+            js_input_txt = $('.js-input-txt'), //输入框集合
+            local_ip_address = '' //本地ip地址
+    }
+    // 登录相关变量
+    {
+        var js_login_user_name = $('#js-login-user-name'), //登录用户名
+            js_login_user_pwd = $('#js-login-user-pwd'), //登录密码
+            js_btn_login = $('#js-btn-login'), //用户登录按钮
+            js_login_input_txt = $('.js-login-input-txt'), //用户登录输入框集合
+            js_login_error_tip = $('#js-login-error-tip') //登录错误提示
+    }
+    //注册相关变量
+    {
+        var js_register_user_name = $('#js-register-user-name'), //注册用户名
+            js_register_user_phone = $('#js-register-user-phone'), //注册手机号码
+            js_register_user_pwd = $('#js-register-user-pwd'), //注册密码
+            bar = $('.pop-register .form-item-range .rangebox .bar'), // 滑块
+            redbg = $('.pop-register .form-item-range .rangebox .redbg'), // 滑块红色背景
+            js_register_sms_code = $('#js-register-sms-code'), //注册短信验证码输入框
+            js_register_get_sms_code = $('#js-register-get-sms-code'), //获取短信验证码
+            js_check_protocol = $('#js-check-protocol'), //是否同意注册协议
+            js_btn_register = $('#js-btn-register'), //用户注册按钮
+            js_register_input_txt = $('.js-register-input-txt'), //用户注册输入框集合
+            js_register_error_tip = $('#js-register-error-tip') //注册错误提示
+    }
+    //忘记密码相关变量
+    {
+        var js_forgot_user_phone = $('#js-forgot-user-phone'), //忘记密码-手机号码
+            js_forgot_user_pwd = $('#js-forgot-user-pwd'), //忘记密码-密码
+            js_forgot_repeat_pwd = $('#js-forgot-repeat-pwd'), //忘记密码-确认密码
+            js_forgot_img_code = $('#js-forgot-img-code'), //忘记密码-图片验证码输入框
+            js_forgot_captcha_code = $('#js-forgot-captcha-code'), //忘记密码-图片验证码
+            js_forgot_sms_code = $('#js-forgot-sms-code'), //忘记密码-短信验证码输入框
+            js_forgot_get_sms_code = $('#js-forgot-get-sms-code'), //忘记密码-获取短信验证码
+            js_btn_forgot = $('#js-btn-forgot'), //忘记密码-用户确认按钮
+            js_forgot_input_txt = $('.js-forgot-input-txt'), //忘记密码-用户输入框集合
+            js_forgot_error_tip = $('#js-forgot-error-tip'), //忘记密码-错误提示
+            forgot_user_phone_is_exist = false, //忘记密码-手机号码是否存在
+            forgot_user_phone_is_blur = false //忘记密码-手机号码输入框是否已经失去焦点
+    }
+    // 常规操作
+    {
+        /**
+         *
+         * 显示在某个元素集合内指定索引的元素，通常用于打开弹窗
+         * 参数1：元素选择器，类型：String || Object
+         * 参数2：元素索引，类型：Number || String
+         */
+        function openPopBox(ele, index) {
+            $(ele).addClass('hide').eq(index).removeClass('hide')
+        }
+
+        // 隐藏某个元素集合，通常用于关闭所有弹窗
+        function closePopBox(ele) {
+            $(ele).addClass('hide')
+        }
+
+        // 点击弹出登录
+        js_pop_login_panel.on({
+            click: function () {
+                js_pop_area_user.removeClass('hide')
+                openPopBox(js_pop_user, 0)
+            }
+        })
+
+        // 点击弹出注册
+        js_pop_register_panel.on({
+            click: function () {
+                js_pop_area_user.removeClass('hide')
+                openPopBox(js_pop_user, 1)
+            }
+        })
+
+        // 点击立即注册
+        js_register_now.on({
+            click: function () {
+                openPopBox(js_pop_user, 1)
+            }
+        })
+
+        //点击返回登录
+        js_return_login.on({
+            click: function () {
+                openPopBox(js_pop_user, 0)
+            }
+        })
+
+        // 点击忘记密码
+        js_forgot_pwd.on({
+            click: function () {
+                openPopBox(js_pop_user, 2)
+            }
+        })
+
+        // 关闭弹窗
+        js_pop_close.on({
+            click: function () {
+                var pop_area = $(this).closest('.js-pop-area')
+                closePopBox(pop_area)
+            }
+        })
+    }
+
+    /**
+     * 与表单校验相关操作
+     */
+    {
+        // 添加指定元素的class
+        function addAppointClass(ele, className, index) {
+            ele.removeClass(className).eq(index).addClass(className)
+        }
+
+        // 用户名合法性校验
+        function checkUserNameLegal(str) {
+            var re = /^[a-zA-Z\d]{6,20}$/
+            return re.test(str)
+        }
+
+        // 密码合法性校验
+        function checkUserPwdLegal(str) {
+            var re = /^[^]{6,20}$/
+            return re.test(str)
+        }
+
+        // 去除字符串首尾两端空格
+        function trim(str) {
+            var reg = /^\s+|\s+$/g
+            return str.replace(reg, '')
+        }
+
+        // 手机号码校验
+        function checkPhoneNum(phoneNum) {
+            var reg = /^1\d{10}$/
+            return reg.test(phoneNum)
+        }
+
+        // 校验是否为纯数字字符串
+        function checkPureDigits(str) {
+            var reg = /\D/
+            return reg.test(str)
+        }
+
+        // 获取本地ip地址
+        function getLocalIPAddress() {
+            $.ajax({
+                url: 'https://api.ipify.org/?format=json',
+                dataType: 'json',
+                type: 'get',
+                success: function (data) {
+                    local_ip_address = data.ip
+                }
+            })
+        }
+
+        getLocalIPAddress()
+    }
+    /**
+     * 与登录相关的操作
+     */
+    {
+        // 清除登录错误提示
+        function clearLoginErrorTip() {
+            js_login_error_tip.addClass('vh')
+        }
+
+        // 显示登录错误提示信息
+        function showLoginErrorMsg(msg) {
+            js_login_error_tip.html(msg).removeClass('vh')
+        }
+
+        // 用户登录校验
+        function checkUserLogin() {
+            var val1 = js_login_user_name.val(),
+                val2 = js_login_user_pwd.val(),
+                isValid = true
+            val1 = trim(val1)
+            val2 = trim(val2)
+            js_login_user_name.val(val1)
+            js_login_user_pwd.val(val2)
+            if (val1.length === 0) {
+                showLoginErrorMsg('请输入用户名')
+                isValid = false
+            } else if (!checkUserNameLegal(val1)) {
+                showLoginErrorMsg('用户名不合法')
+                isValid = false
+            } else if (val2.length === 0) {
+                showLoginErrorMsg('请输入密码')
+                isValid = false
+            } else if (!checkUserPwdLegal(val2)) {
+                showLoginErrorMsg('密码不合法')
+                isValid = false
+            }
+            return isValid
+        }
+
+        // 登录时在每个校验表单元素上监听事件
+        js_login_input_txt.on({
+            keyup: function (e) {
+                if (e.keyCode === 13) {
+                    js_btn_login.trigger('click')
+                }
+            },
+            blur: function () {
+                $(this).closest('.form-item').removeClass('focus')
+                //clearLoginErrorTip();
+            },
+            focus: function () {
+                $(this).closest('.form-item').addClass('focus')
+            }
+        })
+
+        // 点击立即登录
+        js_btn_login.on({
+            click: function (e) {
+                e.stopPropagation()
+                if (checkUserLogin() && !this.canCommit) {
+                    var that = this
+                    this.canCommit = true
+                    // ajax提交表单
+                    $.ajax({
+                        type: 'post',
+                        url: '/api/login',
+                        data: {
+                            name: js_login_user_name.val(),
+                            password: js_login_user_pwd.val()
+                        },
+                        success: function (data) {
+                            that.canCommit = false
+                            if (data.status == 200) {
+                                window.location.reload()
+                            } else {
+                                showLoginErrorMsg(data.msg)
+                            }
+                        }
+                    })
+                }
+            }
+        })
+    }
+
+    /**
+     * 与注册相关的操作
+     */
+    {
+        const max = 329
+        const $body = $('body')
+        const bartextsvg = bar.find('svg>use')
+        // 滑块事件
+        let barmove = null
+        let barIsOk = false // 滑块是否完成
+        let msgIsOk = false  // 短信验证码是否成功发送
+        bar.on('mousedown', e => {
+            const { left: parX } = bar.parent().offset()
+            const x1 = e.offsetX + parX
+            if (!barIsOk) {
+                bar.css('transition', 'none')
+                redbg.css('transition', 'none')
+                $body.on(
+                    'mousemove',
+                    (barmove = e => {
+                        let x = e.pageX - x1
+                        if (x < 0) x = 0
+                        if (x >= max) {
+                            x = max
+                            barIsOk = true
+                            bartextsvg.attr('xlink:href', '#icon-dagou')
+                            bar.css({
+                                'background-color': 'green',
+                                color: 'white'
+                            })
+                            bar.siblings('p').text('滑块验证已完成')
+                        }
+                        bar.css('left', x)
+                        redbg.width(x)
+                    })
+                )
+            }
+        })
+        $body.mouseup(() => {
+            $body.off('mousemove', barmove)
+            if (!barIsOk) {
+                bar.css({
+                    left: 0,
+                    transition: 'all 0.3s'
+                })
+                redbg.css({
+                    transition: 'all 0.3s',
+                    width: 0
+                })
+            }
+        })
+
+        // 密码框切换显示
+        let isopen = false
+        js_register_user_pwd
+            .siblings('svg:last')
+            .click(function () {
+                isopen = !isopen
+                let text = '#icon-biyan'
+                let type = 'password'
+                if (isopen) {
+                    text = '#icon-icon-eye-open'
+                    type = 'text'
+                }
+                $(this).find('use').attr('xlink:href', text)
+                js_register_user_pwd.attr('type', type)
+            })
+
+        // 清除注册错误提示
+        function clearRegisterErrorTip() {
+            js_register_error_tip.addClass('vh')
+        }
+
+
+        // 显示注册错误提示信息
+        function showRegisterErrorMsg(msg) {
+            js_register_error_tip.html(msg).removeClass('vh')
+        }
+
+        // 用户注册校验
+        function checkUserRegister() {
+            var val1 = js_register_user_name.val(),
+                val2 = js_register_user_phone.val(),
+                val3 = js_register_user_pwd.val(),
+                val6 = js_register_sms_code.val(),
+                isValid = true,
+                errtxt = ''
+            val1 = trim(val1)
+            val2 = trim(val2)
+            val3 = trim(val3)
+            val6 = trim(val6)
+            js_register_user_name.val(val1)
+            js_register_user_phone.val(val2)
+            js_register_user_pwd.val(val3)
+            js_register_sms_code.val(val6)
+            if (val1.length === 0) {
+                isValid = false
+                errtxt = '请输入用户名'
+            } else if (!checkUserNameLegal(val1)) {
+                isValid = false
+                errtxt = '用户名不合法'
+            } else if (val2.length === 0) {
+                isValid = false
+                errtxt = '请输入手机号码'
+            } else if (!checkPhoneNum(val2)) {
+                isValid = false
+                errtxt = '手机号码不合法'
+            } else if (val3.length === 0) {
+                isValid = false
+                errtxt = '请输入密码'
+            } else if (!checkUserPwdLegal(val3)) {
+                isValid = false
+                errtxt = '密码不合法'
+            } else if (!barIsOk) {
+                isValid = false
+                errtxt = '未完成滑块验证'
+            } else if (val6.length === 0) {
+                isValid = false
+                errtxt = '请输入短信验证码'
+            } else if (checkPureDigits(val6)) {
+                isValid = false
+                errtxt = '短信验证码不合法'
+            } else if(!msgIsOk){
+                isValid = false
+                errtxt = '您还未获取短信验证码'
+            }
+            return { isValid, errtxt }
+        }
+
+        // 校验用户名是否已存在
+        function checkUserNameIsExist() {
+            return new Promise(r =>
+                $.ajax({
+                    type: 'post',
+                    url: '/user/exists',
+                    data: {
+                        username: js_register_user_name.val()
+                    },
+                    success: function (data) {
+                        if (data.status == 200) {
+                            r({ status: false, msg: '该用户名已存在' })
+                        } else {
+                            r({ status: true, msg: '当前账号未被注册' })
+                        }
+                    }
+                })
+            )
+        }
+
+        // 校验手机号是否已注册
+        function checkUserPhoneHasRegistered() {
+            return new Promise(r =>
+                $.ajax({
+                    type: 'post',
+                    url: '/api/mobilecheck',
+                    data: {
+                        mobile: js_register_user_phone.val()
+                    },
+                    success: function (data) {
+                        if (data.status == 200) {
+                            r({ status: false, msg: '该手机号已被注册' })
+                        } else {
+                            r({ status: true, msg: '当前手机号未被注册' })
+                        }
+                    }
+                })
+            )
+        }
+
+        // 在每个校验表单元素上监听事件
+        js_register_input_txt.on({
+            keyup: function (e) {
+                if (e.keyCode === 13) {
+                    js_btn_register.trigger('click')
+                }
+            },
+            blur: function () {
+                clearRegisterErrorTip()
+            }
+        })
+
+        // 获取验证码倒计时
+        function countRegisterDown(time) {
+            js_register_get_sms_code.html(time + 's后重新获取')
+            time--
+            if (time >= 0) {
+                setTimeout(function () {
+                    countRegisterDown(time)
+                }, 1000)
+            } else {
+                js_register_get_sms_code.html('获取验证码')
+                js_register_get_sms_code.removeClass('disabled')
+            }
+        }
+
+        // 获取短信验证码
+        function getRegisterSmsCode() {
+            // ajax提交表单
+            $.ajax({
+                type: 'post',
+                url: '/api/sendvalsms',
+                data: {
+                    mobile: js_register_user_phone.val(),
+                    valtype: 1,
+                    registerip: local_ip_address
+                },
+                success: function (data) {
+                    if (data.status == 200) {
+                        countRegisterDown(60)
+                        msgIsOk = true
+                    } else {
+                        showRegisterErrorMsg(data.msg)
+                        js_register_get_sms_code.removeClass('disabled')
+                        
+                    }
+                },
+                error: function () {}
+            })
+        }
+
+        
+
+        // 点击获取短信验证码
+        js_register_get_sms_code.on({
+            click: async function () {
+                if (!$(this).hasClass('disabled')) {
+                    const { errtxt } = checkUserRegister()
+                    const arr = [
+                        '请输入用户名',
+                        '用户名不合法',
+                        '请输入手机号码',
+                        '手机号码不合法',
+                        '请输入密码',
+                        '密码不合法',
+                        '未完成滑块验证'
+                    ]
+                    const res = arr.find(item => item === errtxt)
+                    if (!res) {
+                        const {
+                            status,
+                            msg
+                        } = await checkUserPhoneHasRegistered()
+                        if (status) {
+                            $(this).addClass('disabled')
+                            getRegisterSmsCode()
+                        } else {
+                            showRegisterErrorMsg(msg)
+                            
+                        }
+                    } else {
+                        showRegisterErrorMsg(res)
+                    }
+                }
+            }
+        })
+
+        // 点击切换是否同意用户注册协议
+        js_check_protocol.on({
+            click: function () {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active')
+                    js_btn_register.addClass('disabled')
+                } else {
+                    $(this).addClass('active')
+                    js_btn_register.removeClass('disabled')
+                }
+            }
+        })
+
+        // 点击注册
+        js_btn_register.on({
+            click: async function (e) {
+                e.stopPropagation()
+                if (!$(this).hasClass('disabled')) {
+                    const { isValid, errtxt } = checkUserRegister()
+                    if (isValid) {
+                        const { status, msg } = await checkUserNameIsExist()
+                        if (status) {
+                            $.ajax({
+                                type: 'post',
+                                url: '/api/register',
+                                data: {
+                                    name: js_register_user_name.val(),
+                                    mobile: js_register_user_phone.val(),
+                                    password: js_register_user_pwd.val(),
+                                    smscode: js_register_sms_code.val()
+                                },
+                                success: function (data) {
+                                    // that.canCommit = false
+                                    if (data.status == 200) {
+                                        alert('注册成功')
+                                        $.ajax({
+                                            type: 'post',
+                                            url: '/api/login',
+                                            data: {
+                                                name: js_register_user_name.val(),
+                                                password: js_register_user_pwd.val()
+                                            },
+                                            success(res) {
+                                                if (res.status == 200) {
+                                                    alert('自动登录成功')
+                                                    window.location.reload()
+                                                } else {
+                                                    alert(res.msg)
+                                                }
+                                            }
+                                        })
+                                    } else {
+                                        showRegisterErrorMsg(data.msg)
+                                    }
+                                }
+                                // ,
+                                // error: function () {
+                                //     that.canCommit = false
+                                // }
+                            })
+                        } else {
+                            showRegisterErrorMsg(msg)
+                        }
+                    } else {
+                        showRegisterErrorMsg(errtxt)
+                    }
+                }
+            }
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    /**
+     * 与忘记密码相关的操作
+     */
+
+    // 清除忘记密码错误提示
+    function clearForgotErrorTip() {
+        js_forgot_error_tip.addClass('vh')
+    }
+
+    //刷新图片验证码
+    function refreshForgotCaptchaCode() {
+        var src = '/img/captcha.jpg?width=86&height=44&t=' + +new Date()
+        js_forgot_captcha_code.attr('src', src)
+    }
+
+    //点击刷新图片验证码
+    js_forgot_captcha_code.on({
+        click: refreshForgotCaptchaCode
+    })
+
+    // 显示忘记密码错误提示信息
+    function showForgotErrorMsg(msg) {
+        js_forgot_error_tip.html(msg).removeClass('vh')
+    }
+
+    // 用户忘记密码校验
+    function checkUserForgot() {
+        var val1 = js_forgot_user_phone.val(),
+            val2 = js_forgot_img_code.val(),
+            val3 = js_forgot_sms_code.val(),
+            val4 = js_forgot_user_pwd.val(),
+            val5 = js_forgot_repeat_pwd.val(),
+            isValid = true
+        val1 = trim(val1)
+        val2 = trim(val2)
+        val3 = trim(val3)
+        val4 = trim(val4)
+        val5 = trim(val5)
+        js_forgot_user_phone.val(val1)
+        js_forgot_img_code.val(val2)
+        js_forgot_sms_code.val(val3)
+        js_forgot_user_pwd.val(val4)
+        js_forgot_repeat_pwd.val(val5)
+        if (val1.length === 0) {
+            showForgotErrorMsg('请输入手机号码')
+            isValid = false
+        } else if (!checkPhoneNum(val1)) {
+            showForgotErrorMsg('手机号码不合法')
+            isValid = false
+        } else if (val2.length === 0) {
+            showForgotErrorMsg('请输入图片验证码')
+            isValid = false
+        } else if (val3.length === 0) {
+            showForgotErrorMsg('请输入短信验证码')
+            isValid = false
+        } else if (checkPureDigits(val3)) {
+            showForgotErrorMsg('短信验证码不合法')
+            isValid = false
+        } else if (val4.length === 0) {
+            showForgotErrorMsg('请输入密码')
+            isValid = false
+        } else if (!checkUserPwdLegal(val4)) {
+            showForgotErrorMsg('密码不合法')
+            isValid = false
+        } else if (val5.length === 0) {
+            showForgotErrorMsg('请确认密码')
+            isValid = false
+        } else if (val4 !== val5) {
+            showForgotErrorMsg('两次输入的密码不一致')
+            isValid = false
+        }
+        if (!isValid) {
+            refreshForgotCaptchaCode()
+        }
+        return isValid
+    }
+
+    // 校验手机号是否已注册
+    function checkUserPhoneHasForgot(phoneNum) {
+        if (checkPhoneNum(phoneNum)) {
+            $.ajax({
+                type: 'post',
+                url: '/api/mobilecheck',
+                data: {
+                    mobile: js_forgot_user_phone.val()
+                },
+                success: function (data) {
+                    if (data.status !== 200) {
+                        showForgotErrorMsg('该手机号不存在')
+                        forgot_user_phone_is_exist = false
+                    } else {
+                        clearForgotErrorTip()
+                        forgot_user_phone_is_exist = true
+                    }
+                }
+            })
+        }
+    }
+
+    // 在每个校验表单元素上监听事件
+    js_forgot_input_txt.on({
+        keyup: function (e) {
+            if (e.keyCode === 13) {
+                js_btn_forgot.trigger('click')
+            }
+        },
+        blur: function () {
+            clearForgotErrorTip()
+        }
+    })
+
+    // 除了手机号码输入框以外的输入框绑定事件
+    js_forgot_input_txt.not(js_forgot_user_phone).on({
+        focus: function () {
+            if (forgot_user_phone_is_blur) {
+                var phoneNum = js_forgot_user_phone.val()
+                forgot_user_phone_is_blur = false
+                checkUserPhoneHasForgot(phoneNum)
+            }
+        }
+    })
+
+    // 失去焦点时校验手机号码是否已注册
+    js_forgot_user_phone.on({
+        blur: function () {
+            forgot_user_phone_is_blur = true
+        }
+    })
+
+    // 获取验证码倒计时
+    function countForgotDown(time) {
+        js_forgot_get_sms_code.html(time + 's后重新获取')
+        time--
+        if (time >= 0) {
+            setTimeout(function () {
+                countForgotDown(time)
+            }, 1000)
+        } else {
+            js_forgot_get_sms_code.html('获取验证码')
+            js_forgot_get_sms_code.removeClass('disabled')
+        }
+    }
+
+    // 忘记密码-获取短信验证码
+    function getForgotSmsCode() {
+        // ajax提交表单
+        $.ajax({
+            type: 'post',
+            url: '/api/sendvalsms',
+            data: {
+                mobile: js_forgot_user_phone.val(),
+                ticket: js_forgot_img_code.val(),
+                valtype: 1
+            },
+            success: function (data) {
+                if (data.status == 200) {
+                    countForgotDown(60)
+                } else {
+                    refreshForgotCaptchaCode()
+                    showForgotErrorMsg(data.msg)
+                    js_forgot_get_sms_code.removeClass('disabled')
+                }
+            },
+            error: function () {}
+        })
+    }
+
+    // 忘记密码-是否可以发送短信验证码
+    function canSendForgotSmsCode() {
+        var val1 = js_forgot_user_phone.val(),
+            val2 = js_forgot_img_code.val(),
+            isValid = true
+        val1 = trim(val1)
+        val2 = trim(val2)
+        js_forgot_user_phone.val(val1)
+        js_forgot_img_code.val(val2)
+        if (val1.length === 0) {
+            showForgotErrorMsg('请输入手机号码')
+            isValid = false
+        } else if (!checkPhoneNum(val1)) {
+            showForgotErrorMsg('手机号码不合法')
+            isValid = false
+        } else if (val2.length === 0) {
+            showForgotErrorMsg('请输入图片验证码')
+            isValid = false
+        }
+        if (!isValid) {
+            refreshForgotCaptchaCode()
+        }
+        return isValid
+    }
+
+    // 忘记密码-点击获取短信验证码
+    js_forgot_get_sms_code.on({
+        click: function () {
+            if (!$(this).hasClass('disabled') && canSendForgotSmsCode()) {
+                if (forgot_user_phone_is_exist) {
+                    $(this).addClass('disabled')
+                    clearForgotErrorTip()
+                    getForgotSmsCode()
+                } else {
+                    showForgotErrorMsg('该手机号不存在')
+                    refreshForgotCaptchaCode()
+                }
+            }
+        }
+    })
+
+    // 点击忘记密码
+    js_btn_forgot.on({
+        click: function (e) {
+            e.stopPropagation()
+            if (checkUserForgot() && !this.canCommit) {
+                var that = this
+                this.canCommit = true
+                // ajax提交表单
+                $.ajax({
+                    type: 'post',
+                    url: '/api/resetpwd',
+                    data: {
+                        mobile: js_forgot_user_phone.val(),
+                        password: js_forgot_user_pwd.val(),
+                        mobilecode: js_forgot_sms_code.val()
+                    },
+                    success: function (data) {
+                        that.canCommit = false
+                        if (data.status == 200) {
+                            alert('重置密码成功，请重新登录')
+                            openPopBox(js_pop_user, 0)
+                        } else {
+                            refreshForgotCaptchaCode()
+                            showForgotErrorMsg(data.msg)
+                        }
+                    },
+                    error: function () {
+                        that.canCommit = false
+                    }
+                })
+            }
+        }
+    })
+})(jQuery)
+�K4"�      `�)�`�)�Cm:`�da   7    :https://www.ip12345.net/user/js/pop_user.js?v=20200831 necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Server: nginx/1.16.1
+Date: Mon, 24 May 2021 04:21:53 GMT
+Content-Type: text/javascript; charset=utf-8
+Content-Length: 30294
+Accept-Ranges: bytes
+Last-Modified: Fri, 16 Oct 2020 07:17:58 GMT
+ original-response-headers Server: nginx/1.16.1
+Date: Mon, 24 May 2021 04:21:53 GMT
+Content-Type: text/javascript; charset=utf-8
+Content-Length: 30294
+Connection: keep-alive
+Accept-Ranges: bytes
+Last-Modified: Fri, 16 Oct 2020 07:17:58 GMT
+ ctid 2 uncompressed-len 0 net-response-time-onstart 140 net-response-time-onstop 141   vV

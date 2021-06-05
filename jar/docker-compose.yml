@@ -1,0 +1,28 @@
+version: '3'
+
+networks:
+  springboot:
+    external: false
+    
+services:
+  springboot:
+    image: openjdk:8u292-jdk-oraclelinux7
+    container_name: springboot
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    networks:
+      - springboot
+    volumes:
+      - ./app/app.jar:/app.jar
+      - ./app/list:/list
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "9770:9090"
+    command: [
+        'java',
+        '-jar',
+        'app.jar'
+        ]

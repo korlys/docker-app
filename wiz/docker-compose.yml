@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bitwarden:
+    image: wiznote/wizserver:latest
+    container_name: wiz
+    restart: always
+    volumes:
+      - ./wizdata:/wiz/storage
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "80:80"
+      - "9269:9269"

@@ -1,0 +1,27 @@
+version: '2.1'
+
+networks:
+  discuzq:
+    external: false
+    
+services:
+  discuzq:
+    image: ccr.ccs.tencentyun.com/discuzq/dzq:latest
+    container_name: discuzq
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    networks:
+      - discuzq
+    volumes:
+      - ./data/mysqldb:/var/lib/mysqldb/
+      - ./data/discuz:/var/lib/discuz/
+      - ./data/certs/:/etc/nginx/certs/
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "7180:80"
+      - "7443:443"
+
+  

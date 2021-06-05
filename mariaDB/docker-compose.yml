@@ -1,0 +1,26 @@
+
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./conf:/etc/mysql/conf.d
+      - /etc/localtime:/etc/localtime
+    environment:
+      - PUID=1000
+      - PGID=1000        
+      - MYSQL_ROOT_PASSWORD=example
+      - MYSQL_DATABASE=USER_DB_NAME #optional
+      - MYSQL_USER=MYSQL_USER #optional
+      - MYSQL_PASSWORD=DATABASE_PASSWORD #optional
+    
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

@@ -1,0 +1,45 @@
+version: '3'
+
+networks:
+  halo:
+    external: false
+    
+services:
+  server:
+    image: openjdk
+    container_name: halo
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    networks:
+      - halo
+    volumes:
+      - ./halo-1.4.8.jar:/halo.jar
+      - ./application.yaml:/application.yaml
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "8090:8090"
+    depends_on:
+      - db
+    command: [
+          'java',
+          '-jar',
+          'halo.jar'
+        ]
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=halo
+      - MYSQL_USER=halo
+      - MYSQL_PASSWORD=123456
+      - MYSQL_DATABASE=halodb
+    networks:
+      - halo
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql

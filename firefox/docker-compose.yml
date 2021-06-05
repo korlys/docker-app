@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  firefox:
+    image: ghcr.io/linuxserver/firefox
+    container_name: firefox
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - /etc/localtime:/etc/localtime
+    volumes:
+      - ./config:/config
+    ports:
+      - 9300:3000
+    shm_size: "1gb"

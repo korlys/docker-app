@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  filebrower:
+    image: filebrowser/filebrowser
+    restart: always
+    volumes:
+      - ./filebrowser/sites/root:/srv
+      - ./filebrowserconfig.json:/etc/config.json
+      - ./filebrowser/database.db:/etc/database.db 
+    ports:
+      - 9719:80

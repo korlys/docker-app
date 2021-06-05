@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  portainer:
+    external: false
+    
+services:
+  portainer:
+    image: portainer/portainer-ce:alpine
+    container_name: portainer
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    networks:
+      - portainer
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "9580:8000"
+      - "9590:9000"
+volumes:
+  portainer_data:

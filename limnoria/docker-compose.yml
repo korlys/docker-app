@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  limnoria:
+    image: ghcr.io/linuxserver/limnoria
+    container_name: limnoria
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - path/to/config:/config
+    ports:
+      - 8080:8080
+    restart: unless-stopped

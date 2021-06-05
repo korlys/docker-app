@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  photoview:
+    image: rclone/rclone:latest
+    restart: always
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    volumes:
+      - ./.config/rclone:/config/rclone
+      - ./data:/data:shared

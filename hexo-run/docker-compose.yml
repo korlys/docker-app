@@ -1,0 +1,16 @@
+version: '3'
+services:
+  hexo:
+    image: denalon/hexo-run
+    ports: 
+      - "4000:4000"
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./run.sh:/run.sh
+      - ./hexo:/hexo
+    entrypoint:
+      - sh
+      - /run.sh

@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  node:
+    image: nodebb/docker
+    container_name: nodebb
+    restart: unless-stopped
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    depends_on:
+      - db
+    ports:
+      - 9345:4567
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: user
+      POSTGRES_DB: db
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    
+    

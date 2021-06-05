@@ -1,0 +1,19 @@
+
+
+version: '3'
+       
+services:
+  damselfly:
+    image: webreaper/damselfly
+    container_name: damselfly
+    environment:
+        - USER_UID=1000
+        - USER_GID=1000
+    restart: unless-stopped
+    privileged: true
+    volumes:
+        - ./volume1/dockerdata/damselfly:/config
+        - ./volume1/dockerdata/damselfly/thumbs:/thumbs
+        - ./volume1/photo:/pictures 
+    ports:
+        - "9063:6363"

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+<base href="/user/" />
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="baidu-site-verification" content="EEktPIhqeQ" />
+<meta name="renderer" content="webkit" />
+<script src="js/iconfont.js?v=20201016"></script>
+
+        
+<meta
+    name="keywords"
+    content="鲸鱼代理,鲸鱼IP,代理ip,ip修改器,电脑手机换IP,换ip软件,换ip,怎么改ip地址,动态ip,怎么换ip地址,ip地址切换器,如何更改ip地址,更换ip,电脑怎么换ip,更换ip软件,换ip软件"
+/>
+<meta
+    name="description"
+    content="鲸鱼代理是国内专业的高质量ip供应商,提供ip修改,换ip软件,http代理,API接口和自动换IP代理软件,千万高匿名静态ip/动态ip随意选,支持PC,iOS,安卓,高效稳定免费试用,国内ip代理软件首选"
+/>
+<script>
+    ;(function () {
+        var bp = document.createElement('script')
+        var curProtocol = window.location.protocol.split(':')[0]
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+        }
+        var s = document.getElementsByTagName('script')[0]
+        s.parentNode.insertBefore(bp, s)
+    })()
+</script>
+
+        <title>鲸鱼代理-动态IP代理-ip修改器-IP自动切换</title>
+        
+<link rel="stylesheet" href="css/style.css?v=20201026" />
+<link
+    type="image/x-icon"
+    rel="icon"
+    href="img/common/favicon.ico?v=20200528001"
+/>
+
+    </head>
+    <body class="root-index">
+        
+        <div class="main-index">
+            <div class="bg-area">
+                <div class="bg-wrap cover"></div>
+                <div class="bg-content">
+                    <div class="bg-big-title-1">全国200+地区，一键切换</div>
+                    <div class="bg-big-title-2">
+                        费用低至<font style="color: #ff3300">2.0</font>元/天
+                    </div>
+                    <div class="bg-small-title">
+                        带宽4-10Mbps，新用户注册免费试用15分钟
+                    </div>
+                    <div class="bg-free-tray">
+                        <a
+                            href="javascript:;"
+                            rel="nofollow"
+                            class="vm free-tray js-pop-register-panel"
+                            >立即免费试用 ></a
+                        ><img
+                            src="img/index/hot.png"
+                            
+                            class="vm img-hot"
+                        />
+                    </div>
+                    <div class="download-area clearfix">
+                        <a
+                            href="/act/download?fname=whale.zip"
+                            rel="nofollow"
+                            class="fl download-file download-windows js-download-file tj-indexPc"
+                            title="windows客户端下载"
+                        ></a>
+                        <a
+                            href="/act/download?fname=whale.apk"
+                            rel="nofollow"
+                            class="fl download-file download-app js-download-file tj-indexApp"
+                            title="android客户端下载"
+                        >
+                            <div
+                                class="download-qrcode-wrap js-download-qrcode-wrap hide"
+                            >
+                                <img
+                                    src="img/common/download_app.png"
+                                    
+                                    class="img-qrcode"
+                                />
+                                <span class="triangle">&#9670;</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <img
+                    src="img/index/pc_phone_2.png"
+                    alt="鲸鱼IP首屏电脑"
+                    class="img-pc-phone"
+                    style="
+                        position: absolute;
+                        right: 10.75%;
+                        top: 18.53%;
+                        width: 34.375%;
+                        min-width: 600px;
+                    "
+                />
+                
+<div class="header">
+    <div class="header-con clearfix">
+        <a href="/" class="fl img-logo-wrap"
+            ><img src="img/buy/logo.png" alt="鲸鱼代理logo" class="img-logo"
+        /></a>
+        
+        
+        <div class="login-before fr">
+            <a
+                href="javascript:;"
+                rel="nofollow"
+                title="登录"
+                class="fl btn btn-login"
+                id="js-pop-login-panel"
+                >登录</a
+            >
+            <a
+                href="javascript:;"
+                rel="nofollow"
+                title="注册"
+                class="fl btn btn-register js-pop-register-panel"
+                >注册</a
+            >
+            <img src="img/common/tooltip_tray.png" class="img-tooltip" />
+        </div>
+        
+        <ul class="inline nav-list">
+            <li class="list-item">
+                <a href="/" class="link" title="首页">首页</a>
+                <span class="line"></span>
+            </li>
+            <li class="list-item">
+                <a href="/buy" class="link" title="套餐购买">套餐购买</a>
+                <span class="line"></span>
+                <img
+                    src="img/common/tooltip_discount.png"
+                    class="img-tooltip"
+                />
+            </li>
+            <li class="list-item">
+                <a href="/download" class="link" title="软件下载">软件下载</a>
+                <span class="line"></span>
+            </li>
+            <li class="list-item">
+                <a href="/city" class="link" title="线路列表">线路列表</a>
+                <span class="line"></span>
+            </li>
+            <li class="list-item">
+                <a
+                    href="/user/join.html"
+                    rel="nofollow"
+                    class="link"
+                    title="代理加盟"
+                    >代理加盟</a
+                >
+                <span class="line"></span>
+            </li>
+            <li class="list-item">
+                <a href="/news/newslist_1.html" class="link" title="资讯中心"
+                    >资讯中心</a
+                >
+                <span class="line"></span>
+            </li>
+            <li class="list-item">
+                <a href="/help" class="link" title="帮助中心">使用帮助</a>
+                <span class="line"></span>
+            </li>
+            <li class="list-item">
+                <a
+                    href="http://www.leidianvps.com"
+                    rel="nofollow"
+                    class="link"
+                    title="动态VPS"
+                    >动态VPS</a
+                >
+                <span class="line"></span>
+            </li>
+
+            <li class="list-item">
+                <a href="/about" rel="nofollow" class="link" title="关于我们"
+                    >关于我们</a
+                >
+                <span class="line"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+            </div>
+            <div class="advantage-area-1 clearfix">
+                <div class="advantage-con">
+                    <img src="img/index/logo_1.png" alt="鲸鱼代理" class="img-logo" />
+                    <div class="advantage-desc">
+                        <div class="desc-title">鲸鱼IP代理 一键畅游全国</div>
+                        <div class="desc-details">
+                            全国支持200+城市覆盖，电信/联通运营商机房授权IP网络，100万+IP供您稳定畅游
+                        </div>
+                    </div>
+                    <img
+                        src="img/index/advantage.png"
+                        alt="鲸鱼代理4图"
+                        class="img-advantage"
+                    />
+                </div>
+            </div>
+            <div class="advantage-area-2 clearfix">
+                <div class="advantage-con">
+                    <img
+                        src="img/index/advantage_1.png"
+                        alt="鲸鱼代理软件"
+                        class="img-advantage img-advantage-1"
+                    />
+                    <div class="advantage-wrap clearfix">
+                        <img
+                            src="img/index/advantage_2.png"
+                            alt="鲸鱼代理APP"
+                            class="fl img-advantage img-advantage-2"
+                        />
+                        <div class="fr advantage-info">
+                            <div class="big-title">鲸鱼代理 更懂你</div>
+                            <a
+                                href="javascript:;"
+                                rel="nofollow"
+                                class="btn-receive js-pop-register-panel"
+                                >领取免费时长 →</a
+                            >
+                            <img
+                                src="img/index/list.png"
+                                alt="鲸鱼代理DESC"
+                                class="img-list"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-area">
+                <div class="service-con">
+                    <div class="service-big-title">
+                        应用场景丰富，满足多样化需求
+                    </div>
+                    <div class="service-small-title">
+                        强大专业的鲸鱼代理软件，以其全面的能力满足各类业务需求
+                    </div>
+                    <ul class="service-list clearfix">
+                        <li class="list-item">
+                            <div class="item-box">
+                                <div class="item-title">网络技术服务</div>
+                                <div class="item-tip">
+                                    <p>网站采集</p>
+                                    <p>论坛发帖</p>
+                                    <p>游戏测试</p>
+                                    <p>营销优化</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="item-box">
+                                <div class="item-title">推广优化服务</div>
+                                <div class="item-tip">
+                                    <p>电子商务</p>
+                                    <p>定制化推广营销</p>
+                                    <p>数据分析</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="item-box">
+                                <div class="item-title">企业应用服务</div>
+                                <div class="item-tip">
+                                    <p>大数据</p>
+                                    <p>数据爬取</p>
+                                    <p>SEO优化</p>
+                                    <p>金融理财</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="advantage-area-3 clearfix">
+                <div class="advantage-con" id="js-advantage-con">
+                    <div class="advantage-desc">
+                        <div class="desc-title">高速 稳定 安全</div>
+                    </div>
+                    <ul class="advantage-list clearfix">
+                        <li class="list-item">
+                            <p class="tip-1">自营优质节点</p>
+                            <p class="tip-2">100+</p>
+                        </li>
+                        <li class="list-item">
+                            <p class="tip-1">每日使用量</p>
+                            <p class="tip-2">834,355</p>
+                        </li>
+                        <li class="list-item">
+                            <p class="tip-1">可用IP量</p>
+                            <p class="tip-2">1,100,223</p>
+                        </li>
+                    </ul>
+                    <div class="advantage-map hide" id="advantage-map">
+                        <div
+                            class="map-point"
+                            style="
+                                width: 10px;
+                                height: 10px;
+                                left: 200px;
+                                bottom: 50px;
+                            "
+                        >
+                            <span>已开通</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="news-area">
+                <div class="news-content">
+                    <div class="news-big-title">
+                        <h1>聚焦鲸鱼代理，关注国内专业IP工具</h1>
+                        <h2>
+                            聚焦行业资讯，帮助企业，个人掌握最新行业知识，提升领域竞争力
+                        </h2>
+                    </div>
+                    <div class="news-listbox">
+                        <div class="new-list-item">
+                            <a href="javascript:;" rel="nofollow" class="new-list-item-imgbox">
+                                <img src="img/index/img-1.jpg" alt="鲸鱼代理优秀设计" />
+                            </a>
+                            <ul>
+                                <li>
+                                    <span>06.21</span
+                                    ><a href="/user/news_10.html" rel="nofollow"
+                                        >鲸鱼IP代理工具实现网页优化</a
+                                    >
+                                </li>
+                                <li>
+                                    <span>06.07</span
+                                    ><a href="/user/news_9.html" rel="nofollow"
+                                        >选择代理IP的三个实用技巧</a
+                                    >
+                                </li>
+                                <li>
+                                    <span>06.02</span
+                                    ><a href="/user/news_8.html" rel="nofollow"
+                                        >使用换IP软件的注意事项</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="new-list-item">
+                            <a href="javascript:;" rel="nofollow" class="new-list-item-imgbox">
+                                <img src="img/index/img-2.png" alt="鲸鱼代理产品帮助" />
+                            </a>
+                            <ul>
+                                <li>
+                                    <span>05.31</span
+                                    ><a href="/user/news_7.html" rel="nofollow"
+                                        >使用代理IP能帮我们做什么</a
+                                    >
+                                </li>
+                                <li>
+                                    <span>05.23</span
+                                    ><a href="/user/news_6.html" rel="nofollow"
+                                        >什么是动态IP</a
+                                    >
+                                </li>
+                                <li>
+                                    <span>05.12</span 
+                                    ><a href="/user/news_5.html" rel="nofollow"
+                                        >什么是动态IP，为什么要选择它</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="new-list-item">
+                            <a href="javascript:;" rel="nofollow" class="new-list-item-imgbox">
+                                <img src="img/index/img-3.jpg" alt="鲸鱼代理优秀人才" />
+                            </a>
+                            <ul>
+                                <li>
+                                    <span>05.01</span
+                                    ><a href="/user/news_4.html" rel="nofollow"
+                                        >如何检测代理IP有没有效果</a
+                                    >
+                                </li>
+                                <li>
+                                    <span>04.15</span
+                                    ><a href="/user/news_3.html" rel="nofollow"
+                                        >IP切换器有什么用</a
+                                    >
+                                </li>
+                                <li>
+                                    <span>04.13</span
+                                    ><a href="/user/news_2.html" rel="nofollow"
+                                        >IP代理软件为什么很受欢迎</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+<div class="footer">
+    <div class="footer-con">
+        <div class="left-side">
+            <p class="tip tip-1 clearfix">
+                <span class="fl txt-1">旗下产品</span>
+                <span class="fl txt-2"><a href="/">鲸鱼代理</a></span>
+                <img src="img/index/hot.png" class="img-hot" />
+            </p>
+            <p class="tip tip-2 clearfix">
+                <span class="fl txt-1">联系我们</span>
+                <span class="fl txt-2">QQ客服：3007279839（9:00-22:00）</span>
+                <span class="fl txt-3"
+                    >服务热线：19942146751（9:00-22:00）</span
+                >
+            </p>
+            <p class="tip tip-2 clearfix">
+                <span class="fl txt-1 vh">联系我们</span>
+                <span class="fl txt-4">商务合作：0519-81887738</span>
+            </p>
+            <p class="tip tip-3 clearfix">
+                <span class="fl txt-1">友情链接</span>
+                <a
+                    rel="nofollow"
+                    href="https://www.jingyuip.com"
+                    target="_blank"
+                    ><span class="fl txt-2">IP代理</span></a
+                >
+                <a
+                    rel="nofollow"
+                    href="https://www.jingyudaili.com"
+                    target="_blank"
+                    ><span class="fl txt-2">换IP</span></a
+                >
+                <a
+                    rel="nofollow"
+                    href="http://www.datahunter.cn"
+                    target="_blank"
+                    ><span class="fl txt-2">数据可视化</span></a
+                >
+                <a
+                    rel="nofollow"
+                    href="https://www.zhixiaodashi.com/"
+                    target="_blank"
+                    ><span class="fl txt-2">直销系统定制</span></a
+                >
+               
+                
+                <script
+                    id="qd28521510843e43e768e4b409643bbec1d8eb2e04b7"
+                    src="https://wp.qiye.qq.com/qidian/2852151084/3e43e768e4b409643bbec1d8eb2e04b7"
+                    charset="utf-8"
+                    async
+                    defer
+                ></script>
+                
+            </p>
+            <p class="tip tip-5 clearfix">
+                <span class="fl txt-1">许可证件</span>
+                <a href="img/common/zjzp.jpg" class="fl txt-2" target="_blank" rel="nofollow"
+                    >增值电信业务经营许可证 苏B2-20201168</a
+                >
+                <a
+                    href="img/common/vpnxkz.jpg"
+                    rel="nofollow"
+                    target="_blank"
+                    class="fl txt-2"
+                    style="margin-left: 20px"
+                    >增值电信业务经营许可证 B1-20194003</a
+                >
+                
+            </p>
+            <p class="tip tip-4 clearfix">
+                <span class="fl txt-1">备案信息</span>
+                <a
+                    href="https://beian.miit.gov.cn"
+                    rel="nofollow"
+                    target="_blank"
+                    class="fl txt-2"
+                    >苏ICP备19001164号-1© 版权所有江苏巨灵神网络科技有限公司</a
+                >
+				[<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279402663'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279402663' type='text/javascript'%3E%3C/script%3E"));</script>]
+            </p>
+
+			<p class="tip tip-4 clearfix">
+			<span class="fl txt-1" style="width:550px;">开发者：江苏巨灵神网络科技有限公司　鲸鱼代理 版本号V1.3</span>
+			<a href='/wap/privacy-protocol.html'  target="_blank" class="fl txt-2">隐私协议</a>
+            <a href='/wap/App-permissions.html'  target="_blank" class="fl txt-2">应用权限</a>
+			</p>
+        </div>
+        <div class="right-side">
+            <img
+                src="img/index/wxgzh.png"
+                alt="鲸鱼代理公众号"
+                width="150"
+                height="150"
+                class="img-logo"
+            />
+            <p class="tip">微信公众号</p>
+        </div>
+    </div>
+	<span id='abc' style="font-size:12px"></span>
+</div>
+
+        
+        
+<div class="cover pf pop-area js-pop-area hide" id="js-pop-area-user">
+    <div class="cover mask-layer"></div>
+    
+    <div class="pop-box pop-user pop-login js-pop-user" id="js-pop-login">
+        <div class="left-side tc">
+            <span class="middle"></span>
+            <div class="inline vm">
+                <img src="img/popbox/logo.png" class="vm img" />
+                <p class="txt">鲸鱼代理</p>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="pop-header">
+                <span class="txt">还没有账号？</span
+                ><a
+                    href="javascript:;"
+                    rel="nofollow"
+                    class="link"
+                    id="js-register-now"
+                    >立即注册</a
+                >
+            </div>
+            <a
+                href="javascript:;"
+                rel="nofollow"
+                class="pop-close js-pop-close"
+                title="关闭"
+                ><img src="img/popbox/close.png" class="vm img-close" /><span
+                    class="vm txt"
+                    >关闭</span
+                ></a
+            >
+            <div class="form-wrap">
+                <div class="form-item">
+                    <span class="icon-wrap icon-account"></span>
+                    <input
+                        type="text"
+                        class="input-txt js-input-txt js-login-input-txt"
+                        placeholder="请输入用户名"
+                        id="js-login-user-name"
+                    />
+                </div>
+                <div class="form-item">
+                    <span class="icon-wrap icon-pwd"></span>
+                    <input
+                        type="password"
+                        class="input-txt js-input-txt js-login-input-txt"
+                        placeholder="请输入密码"
+                        id="js-login-user-pwd"
+                        autocomplete="new-password"
+                    />
+                </div>
+            </div>
+            <div class="error-tip js-error-tip vh" id="js-login-error-tip">
+                用户名不能为空
+            </div>
+            <div class="btn-login tj-btn-login" id="js-btn-login">登录</div>
+            <div class="forgot-pwd-wrap">
+                <a
+                    href="javascript:;"
+                    rel="nofollow"
+                    class="forgot-pwd"
+                    id="js-forgot-pwd"
+                    >忘记密码？</a
+                >
+            </div>
+        </div>
+    </div>
+    
+    <div class="pop-box pop-user pop-register js-pop-user" id="js-pop-register">
+        <div class="left-side tc">
+            <span class="middle"></span>
+            <div class="inline vm">
+                <img src="img/popbox/logo.png" class="vm img" />
+                <p class="txt">鲸鱼代理</p>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="pop-header">
+                <a
+                    href="javascript:;"
+                    rel="nofollow"
+                    class="inline link"
+                    id="js-return-login"
+                    ><img src="img/popbox/icon_back.png" class="vm img" /><span
+                        class="vm txt"
+                        >返回登录</span
+                    ></a
+                >
+            </div>
+            <a
+                href="javascript:;"
+                rel="nofollow"
+                class="pop-close js-pop-close"
+                title="关闭"
+                ><img src="img/popbox/close.png" class="vm img-close" /><span
+                    class="vm txt"
+                    >关闭</span
+                ></a
+            >
+            <div class="form-wrap">
+                <div class="form-item">
+                    <svg class="icon lefticon" aria-hidden="true">
+                        <use xlink:href="#icon-denglu"></use>
+                    </svg>
+                    <input
+                        type="text"
+                        class="input-txt js-input-txt js-register-input-txt"
+                        placeholder="请输入6-20位用户名,包含英文、数字"
+                        id="js-register-user-name"
+                        autocomplete="off"
+                    />
+                </div>
+                <div class="form-item">
+                    <svg class="icon lefticon" aria-hidden="true">
+                        <use xlink:href="#icon-shouji"></use>
+                    </svg>
+                    <input
+                        type="text"
+                        class="input-txt js-input-txt js-register-input-txt"
+                        placeholder="请输入手机号码"
+                        id="js-register-user-phone"
+                        autocomplete="off"
+                    />
+                </div>
+                <div class="form-item">
+                    <svg class="icon lefticon" aria-hidden="true">
+                        <use xlink:href="#icon-suo"></use>
+                    </svg>
+                    <svg class="icon righticon" aria-hidden="true">
+                        <use xlink:href="#icon-biyan"></use>
+                    </svg>
+                    <input
+                        type="password"
+                        class="input-txt js-input-txt js-register-input-txt"
+                        placeholder="请输入6-20位密码"
+                        id="js-register-user-pwd"
+                    />
+                </div>
+                
+                <div class="form-item form-item-range">
+                    <div class="rangebox">
+                        <p>请按住滑块，拖动到最右边</p>
+                        <div class="bar">
+                            <svg class="icon righticon" aria-hidden="true">
+                                <use xlink:href="#icon-sjty"></use>
+                            </svg>
+                        </div>
+                        <div class="redbg"></div>
+                    </div>
+                    
+                </div>
+                <div class="form-item form-item-sms-code">
+                    <svg class="icon lefticon" aria-hidden="true">
+                        <use xlink:href="#icon-msg"></use>
+                    </svg>
+                    <input
+                        type="text"
+                        class="input-txt js-input-txt js-register-input-txt"
+                        placeholder="请输入短信验证码"
+                        id="js-register-sms-code"
+                    />
+                    <a
+                        href="javascript:;"
+                        class="sms-code"
+                        id="js-register-get-sms-code"
+                        >获取验证码</a
+                    >
+                </div>
+            </div>
+            <div class="register-tip">
+                <a
+                    href="javascript:;"
+                    class="vm inline check"
+                    id="js-check-protocol"
+                ></a
+                ><span class="vm txt">我已仔细阅读并接受</span
+                ><a href="protocol.html" class="vm link" target="_blank"
+                    >《用户注册协议》</a
+                >
+            </div>
+            <div class="error-tip js-error-tip vh" id="js-register-error-tip">
+                用户名不能为空
+            </div>
+            <div class="btn-register disabled tj-btn-register" id="js-btn-register">确定</div>
+        </div>
+    </div>
+    
+    <div class="pop-box pop-user pop-forgot js-pop-user" id="js-pop-forgot">
+        <div class="left-side tc">
+            <span class="middle"></span>
+            <div class="inline vm">
+                <img src="img/popbox/logo.png" class="vm img" />
+                <p class="txt">鲸鱼代理</p>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="pop-header">
+                <div class="pop-header-title">忘记密码</div>
+                <span class="line"></span>
+                <a
+                    href="javascript:;"
+                    rel="nofollow"
+                    class="pop-close js-pop-close"
+                    title="关闭"
+                    ><img
+                        src="img/popbox/close.png"
+                        class="vm img-close"
+                    /><span class="vm txt">关闭</span></a
+                >
+            </div>
+            <div class="form-wrap">
+                <div class="form-item">
+                    <input
+                        type="text"
+                        class="input-txt js-input-txt js-forgot-input-txt"
+                        placeholder="请输入注册手机号码"
+                        id="js-forgot-user-phone"
+                        autocomplete="off"
+                    />
+                </div>
+                <div class="form-item form-item-img-code">
+                    <input
+                        type="text"
+                        class="input-txt js-input-txt js-forgot-input-txt"
+                        placeholder="请输入图形验证码"
+                        id="js-forgot-img-code"
+                    />
+                    <img
+                        src="/img/captcha.jpg?width=86&height=44"
+                        class="img-code"
+                        id="js-forgot-captcha-code"
+                    />
+                </div>
+                <div class="form-item form-item-sms-code">
+                    <input
+                        type="text"
+                        class="input-txt js-input-txt js-forgot-input-txt"
+                        placeholder="请输入短信验证码"
+                        id="js-forgot-sms-code"
+                    />
+                    <a
+                        href="javascript:;"
+                        rel="nofollow"
+                        class="sms-code"
+                        id="js-forgot-get-sms-code"
+                        >获取验证码</a
+                    >
+                </div>
+                <div class="form-item">
+                    <input
+                        type="password"
+                        class="input-txt js-input-txt js-forgot-input-txt"
+                        placeholder="请输入6-20位密码"
+                        id="js-forgot-user-pwd"
+                    />
+                </div>
+                <div class="form-item">
+                    <input
+                        type="password"
+                        class="input-txt js-input-txt js-forgot-input-txt"
+                        placeholder="请再次输入密码"
+                        id="js-forgot-repeat-pwd"
+                    />
+                </div>
+            </div>
+            <div class="error-tip js-error-tip vh" id="js-forgot-error-tip">
+                手机号不能为空
+            </div>
+            <div class="btn-forgot" id="js-btn-forgot">确定</div>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="pop-box pop-service" id="js-pop-service">
+            <div class="pop-header">
+                <span class="txt">欢迎使用鲸鱼软件</span>
+                <a href="javascript:;" rel="nofollow" class="close js-close-pop-service"></a>
+                <div class="split-line"></div>
+            </div>
+            <div class="pop-service-con">
+                <div class="kefu-area clearfix">
+                    <img
+                        src="img/popbox/kefu_qq.png"
+                        
+                        class="fl img-qq"
+                    />
+                    <div class="fl desc-area">
+                        <p class="tip-1">立即注册，免费试用</p>
+                        <p class="tip-2">工作时间：9:00-22:00</p>
+                    </div>
+                </div>
+                <div class="btn-area clearfix">
+                    <a href="/download" rel="nofollow" class="fl btn btn-yes">立即试用</a>
+                    <a
+                        target="_blank"
+                        rel="nofollow"
+                        href="http://q.url.cn/CD4TCl?_type=wpa&qidian=true"
+                        class="fr btn btn-no tj-kefu3"
+                        >联系客服</a
+                    >
+                </div>
+            </div>
+        </div>
+        
+        
+<div class="aside-bar">
+    <div class="aside-bar-item">
+        <p>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-duihua"></use>
+            </svg>
+        </p>
+        <p>在线客服</p>
+        <div>
+            <div class="aside-bar-item-pop">
+                <i>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-guanbi"></use>
+                    </svg>
+                </i>
+                <div class="img-box">
+                    <img src="img/index/wxgzh.png" />
+                    <span>微信客服</span>
+                </div>
+
+                <a
+                    href="http://q.url.cn/CD4TCl?_type=wpa&qidian=true"
+                    rel="nofollow"
+                    target="_blank"
+                    class="aside-bar-link tj-kefu1"
+                >
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-qq"></use>
+                        </svg>
+                    </span>
+                    <div>
+                        <p>售前客服</p>
+                        <p>在线客服实时响应</p>
+                    </div>
+                </a>
+                <a
+                    href="http://q.url.cn/CD4TCl?_type=wpa&qidian=true"
+                    rel="nofollow"
+                    target="_blank"
+                    class="aside-bar-link tj-kefu1"
+                >
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yonghuzhuce"></use>
+                        </svg>
+                    </span>
+                    <div >
+                        <p>售前客服</p>
+                        <p>在线客服实时响应</p>
+                    </div>
+                </a>
+                <a
+                    href="http://q.url.cn/CD4TCl?_type=wpa&qidian=true"
+                    rel="nofollow"
+                    target="_blank"
+                    class="aside-bar-link tj-kefu2"
+                >
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-duihua"></use>
+                        </svg>
+                    </span>
+                    <div >
+                        <p>售后客服</p>
+                        <p>在线客服实时响应</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="aside-bar-item">
+        <p>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-qiyekehu"></use>
+            </svg>
+        </p>
+        <p>合作客户</p>
+        <div>
+            <div class="aside-bar-item-pop">
+                <i>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-guanbi"></use>
+                    </svg>
+                </i>
+                <div class="img-box">
+                    <p>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-dianhua"></use>
+                        </svg>
+                    </p>
+                    <span>电话：0519-81887738</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="aside-bar-item">
+        <p>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-diannao"></use>
+            </svg>
+        </p>
+        <p>工作室</p>
+        <div>
+            <div class="aside-bar-item-pop">
+                <i>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-guanbi"></use>
+                    </svg>
+                </i>
+                <div class="aside-bar-item-pop-title">大客户经理</div>
+                <div class="aside-bar-link">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-qq"></use>
+                        </svg>
+                    </span>
+                    <div>
+                        <p>QQ</p>
+                        <p>3007279839</p>
+                    </div>
+                </div>
+                <div class="aside-bar-link">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yonghuzhuce"></use>
+                        </svg>
+                    </span>
+                    <div>
+                        <p>电话</p>
+                        <p>0519-81887738</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="aside-bar-item">
+        <p>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-vip"></use>
+            </svg>
+        </p>
+        <p>大客户</p>
+        <div>
+            <div class="aside-bar-item-pop">
+                <i>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-guanbi"></use>
+                    </svg>
+                </i>
+                <div class="img-box">
+                    <p>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-dianhua"></use>
+                        </svg>
+                    </p>
+                    <span>电话：0519-81887738</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="aside-bar-item">
+        <p>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-weixin"></use>
+            </svg>
+        </p>
+        <p>公众号</p>
+        <div>
+            <div class="aside-bar-item-pop">
+                <i>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-guanbi"></use>
+                    </svg>
+                </i>
+                <div class="img-box">
+                    <img src="img/index/wxgzh.png" />
+                    <span>关注鲸鱼</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a
+        class="aside-bar-item"
+        href="http://jingyudaili.mikecrm.com/dSE30ue"
+        rel="nofollow"
+        target="_blank"
+    >
+        <p>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-dianhua"></use>
+            </svg>
+        </p>
+        <p>意见反馈</p>
+    </a>
+    <div class="aside-bar-item">
+        <p>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-huidaodingbu"></use>
+            </svg>
+        </p>
+        <p>回到顶部</p>
+    </div>
+    
+    
+    
+</div>
+
+         
+        
+        <script src="js/common/jquery-1.11.3.min.js"></script>
+        <script src="js/index.js?v=20201023"></script>
+        <script src="js/pop_user.js?v=20200831"></script>
+        
+<script src="js/pop_service.js?v=20200925"></script>
+<script type="text/javascript" src="js/zepto-1.2.0.min.js"></script>
+<script src="js/mobile-detect.js"></script>
+<script src="js/post.js" calss=''></script>
+
+        <script src="js/common/hm.js"></script>
+    </body>
+</html>
+�l��      `�)�`�)�Cm9`�)�       :https://www.ip12345.net/ necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Server: nginx/1.16.1
+Date: Mon, 24 May 2021 04:21:53 GMT
+Content-Type: text/html; charset=utf-8
+ original-response-headers Server: nginx/1.16.1
+Date: Mon, 24 May 2021 04:21:53 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: userinfo=MTYyMTgzMDExM3xOd3dBTkVGWFUwMDNXRTlSTkVaSFQxbElORTlIVkZCTlJrTlBUa2xGVUVKUlZWRk1VMVpCUTBwTk1rcGFXa3hEUXpVM05WbEdSbEU9fMuojhFa2eXD347yCATJ6JALP2gwE46L2z5KFbVoNmZH; Path=/; Expires=Mon, 24 May 2021 04:51:53 GMT; Max-Age=1800
+ ctid 1 uncompressed-len 0 predictor::resource-count 60 predictor::https://www.ip12345.net/user/js/iconfont.js?v=20201016 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/css/style.css?v=20201026 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/img/index/hot.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/common/download_app.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/pc_phone_2.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/buy/logo.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/common/tooltip_tray.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/common/tooltip_discount.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/logo_1.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/advantage.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/advantage_1.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/advantage_2.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/list.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/img-1.jpg 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/img-2.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/img-3.jpg 1,1,1621830112,4097 predictor::https://wp.qiye.qq.com/qidian/2852151084/3e43e768e4b409643bbec1d8eb2e04b7 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/img/index/wxgzh.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/popbox/logo.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/popbox/close.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/popbox/icon_back.png 1,1,1621830112,4097 net-response-time-onstart 696 net-response-time-onstop 738 predictor::https://www.ip12345.net/img/captcha.jpg?width=86&height=44 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/img/popbox/kefu_qq.png 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/js/common/jquery-1.11.3.min.js 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/js/index.js?v=20201023 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/js/pop_user.js?v=20200831 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/js/pop_service.js?v=20200925 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/js/zepto-1.2.0.min.js 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/js/mobile-detect.js 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/js/post.js 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/js/common/hm.js 1,1,1621830112,4097 predictor::https://zz.bdstatic.com/linksubmit/push.js 1,1,1621830112,4097 predictor::https://www.ip12345.net/user/img/index/bg.jpg 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/img/index/btn_windows.png 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/img/index/btn_app.png 1,1,1621830112,4096 predictor::https://bqq.gtimg.com/qidian/src/wpa/dist/5.0.0/pk1.js 1,1,1621830112,4097 predictor::https://s9.cnzz.com/z_stat.php?id=1279402663 1,1,1621830112,4096 predictor::https://c.cnzz.com/core.php?web_id=1279402663&t=z 1,1,1621830112,4096 predictor::https://bqq.gtimg.com/da_market/i.js 1,1,1621830112,4096 predictor::https://p.qpic.cn/qidian_pic/2852151084/202007100fca1634fd5a7f9597ce79fd3e2f4369/0 1,1,1621830112,4096 predictor::https://t.gdt.qq.com/conv/web/cookies/jsonp?cb=jsonp_cb_0_1621830113905_138&callback=jsonp_cb_0_1621830113905_138 1,1,1621830112,4096 predictor::https://admin.qidian.qq.com/qbf/aBTest/getGrayLevel?kfuin=2852151084&callback=JSONP_CB_1_1621830113905_671&cb=JSONP_CB_1_1621830113905_671 1,1,1621830112,4096 predictor::https://bqq.gtimg.com/qidian/src/wpa/dist/5.0.0/images/im-bubble-pc-theme3.png 1,1,1621830112,4096 predictor::https://cnzz.mmstat.com/9.gif?abc=1&rnd=571753186 1,1,1621830112,4096 predictor::https://www.ip12345.net/user/img/popbox/kefu_close.png 1,1,1621830112,4096 predictor::https://hm.baidu.com/hm.js?1b1bdc29c57114d6ae151556afaf1b29 1,1,1621830112,4096 predictor::https://goutong.baidu.com/site/493/1b1bdc29c57114d6ae151556afaf1b29/b.js?siteId=13124644 1,1,1621830112,4096 predictor::https://sgoutong.baidu.com/embed/1621407734/asset/embed/pc_nb.js 1,1,1621830112,4096 predictor::https://sgoutong.baidu.com/embed/1621407734/asset/embed/css/pc/main.css 1,1,1621830112,4096 predictor::https://sgoutong.baidu.com/eye/log/js/stat.gif?uuid=uuid_8ee1bdbe-7ef2-4f29-8c89-469d12c25148&brgeyemid=m2008&t=1621830114676&ip=&dtype=1&ucid=27355820&uid=-1&siteid=13124644&tabid=tabid_1621830114675&bid=162183011467530845&sessionid=-100&originType=0&likeCrm=0&ideaType=-1&query=-1 1,1,1621830112,4096 predictor::https://sgoutong.baidu.com/eye/log/js/stat.gif?cncttype=renderFinish&uuid=uuid_8ee1bdbe-7ef2-4f29-8c89-469d12c25148&brgeyemid=m2009&cost=342&icon=0&toolbar=0&t=1621830114685&ip=&dtype=1&ucid=27355820&uid=-1&siteid=13124644&tabid=tabid_1621830114675&bid=162183011467530845&sessionid=-100&originType=0&likeCrm=0&ideaType=-1&query=-1 1,1,1621830112,4096 predictor::https://sgoutong.baidu.com/eye/log/js/stat.gif?cncttype=startSite&uuid=uuid_2af91d17-b164-4bb5-bb25-04519e6c63db&brgeyemid=m2010&isInviteOrCom=-1&t=1621830114687&ip=&dtype=1&ucid=27355820&uid=-1&siteid=13124644&tabid=tabid_1621830114675&bid=162183011467530845&sessionid=-100&originType=0&likeCrm=0&ideaType=-1&query=-1 1,1,1621830112,4096 predictor::https://sofire.bdstatic.com/js/dfxaf.js 1,1,1621830112,4097 predictor::https://sgoutong.baidu.com/eye/log/js/stat.gif?uuid=uuid_2ff71da1-e090-495b-9e96-35eb7f524240&brgeyemid=m2001&t=1621830114696&ip=&dtype=1&ucid=27355820&uid=-1&siteid=13124644&tabid=tabid_1621830114675&bid=162183011467530845&sessionid=-100&originType=0&likeCrm=0&ideaType=-1&query=-1 1,1,1621830112,4096 predictor::https://sgoutong.baidu.com/eye/log/js/stat.gif?uuid=uuid_2ff71da1-e090-495b-9e96-35eb7f524240&brgeyemid=m2002&t=1621830114698&ip=&dtype=1&ucid=27355820&uid=-1&siteid=13124644&tabid=tabid_1621830114675&bid=162183011467530845&sessionid=-100&originType=0&likeCrm=0&ideaType=-1&query=-1 1,1,1621830112,4096 predictor::https://aifanfan.baidu.com/invite.js?appId=1&siteId=13124644&userId=27355820 1,1,1621830112,4096 predictor::https://sgoutong.baidu.com/eye/log/js/stat.gif?cncttype=finishSite&uuid=uuid_2af91d17-b164-4bb5-bb25-04519e6c63db&brgeyemid=m2011&cost=2609&siteCost=2265&t=1621830116952&ip=&dtype=1&ucid=27355820&uid=-1&siteid=13124644&tabid=tabid_1621830114675&bid=162183011467530845&sessionid=-100&originType=0&likeCrm=0&ideaType=-1&query=-1 1,1,1621830112,4096 predictor::https://aifanfan.baidu.com/i.gif?id=m3&stopIntelWel=62&t=1621830117296&dtype=1&ua=Mozilla/5.0%20(X11;%20Linux%20x86_64;%20rv:78.0)%20Gecko/20100101%20Firefox/78.0&ucid=-1&bid=162183011729687b7_1621830117296_90671&siteId=-1&likeCrm=-1&callback=jsonp_1621830117296_74752 1,1,1621830112,4096 predictor::https://sgoutong.baidu.com/eye/log/js/stat.gif?uuid=uuid_2af91d17-b164-4bb5-bb25-04519e6c63db&brgeyemid=m2012&totalMsgCount=0&failMsgCount=0&t=1621830119607&ip=&dtype=1&ucid=27355820&uid=-1&siteid=13124644&tabid=tabid_1621830114675&bid=162183011467530845&sessionid=-100&originType=0&likeCrm=0&ideaType=-1&query=-1 1,1,1621830112,4096 predictor::https://sgoutong.baidu.com/eye/log/js/stat.gif?uuid=uuid_595c35d6-e142-41fa-9f0f-310bdbedc6ee&brgeyemid=m2014&totalMsgCount=0&failMsgCount=0&t=1621830119609&ip=&dtype=1&ucid=27355820&uid=-1&siteid=13124644&tabid=tabid_1621830114675&bid=162183011467530845&sessionid=-100&originType=0&likeCrm=0&ideaType=-1&query=-1 1,1,1621830112,4096   ��

@@ -1,0 +1,47 @@
+#Docker compose的版本，没什么特别的，这里用版本2也可以
+version: '3'
+
+networks:
+  default:
+    external: false
+#开始创建服务
+services:
+  typecho:
+      image: 80x86/typecho:latest
+      ports:
+        - 9280:80
+      volumes: 
+        - ./typecho:/data
+      restart: always
+      environment: 
+        - PHP_TZ=Asia/Shanghai \
+        - PHP_MAX_EXECUTION_TIME=600 \
+      networks: 
+        - default
+      depends_on:
+        - mysqlserver
+
+  mysqlserver:
+      image: mysql:5.7.22
+      restart: always
+      container_name: mysqlserver
+      networks:
+        - default
+      ports:
+        - 9306:3306
+      privileged: true
+      environment:
+        TZ: Asia/Shanghai
+        MYSQL_ROOT_PASSWORD: 123456
+      command:
+        --character-set-server=utf8mb4
+        --collation-server=utf8mb4_general_ci
+        --explicit_defaults_for_timestamp=true
+        --lower_case_table_names=1
+        --max_allowed_packet=128M
+        --sql-mode=
+        --default-authentication-plugin=mysql_native_password
+        --sql-mode="STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO"
+      volumes:
+        - ./mysql/data:/var/lib/mysql
+        - ./mysql/conf/my.cnf:/etc/my.cnf

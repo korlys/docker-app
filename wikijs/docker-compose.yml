@@ -1,0 +1,16 @@
+
+version: "3.9"
+services:
+  wikijs:
+    image: ghcr.io/linuxserver/wikijs
+    container_name: wikijs
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - <path to config>:/config
+      - <path to data>:/data
+      - /etc/localtime:/etc/localtime
+    ports:
+      - 3000:3000
+    restart: unless-stopped

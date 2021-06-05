@@ -1,0 +1,20 @@
+#Docker compose的版本，没什么特别的，这里用版本2也可以
+version: '3'
+
+networks:
+  nps:
+    external: false
+
+#开始创建服务
+services:
+  nps:
+     image: ffdfgdfg/nps
+     container_name: nps
+     volumes:
+       - ./conf:/conf
+     networks:
+       - nps
+     ports:
+       - "8080:8080"
+       - "8024:8024"
+     restart: always

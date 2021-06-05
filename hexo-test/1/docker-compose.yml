@@ -1,0 +1,13 @@
+version: '3'
+services:
+  hexo:
+    build: .
+    ports: 
+      - "4000:4000"
+    environment: 
+      - PUBLIC_HEXO_GITHUB_URL=https://e.coding.net/frednab/dev/hexo-blog.git
+    volumes:
+      - ./run.sh:/run.sh
+    entrypoint:
+      - sh
+      - /run.sh
