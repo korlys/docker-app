@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  kavita:
+    image: coredns/coredns
+    volumes:
+        - ./data/coredns:/etc/coredns/
+    restart: unless-stopped
