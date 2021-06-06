@@ -18,7 +18,7 @@ $CONF['setup_password'] = '$2y$10$UkOf2dWBhDiOtH1BJ1.G.OzNxZ00Vn6n55ryPG9ieYqyce
 将
 
 ```
-		$CONF['setup_password'] = 'changeme';
+$CONF['setup_password'] = 'changeme';
 ```
 修改为
 ```
