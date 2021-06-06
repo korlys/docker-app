@@ -17,10 +17,11 @@ services:
     ports:
       - 8000:80
     restart: always
+    volumes:
+        - ./data:/var/www/html
     environment:
       POSTFIXADMIN_DB_TYPE: mysqli
       POSTFIXADMIN_DB_HOST: db
       POSTFIXADMIN_DB_USER: postfixadmin
       POSTFIXADMIN_DB_NAME: postfixadmin
       POSTFIXADMIN_DB_PASSWORD: example
-      POSTFIXADMIN_SETUP_PASSWORD: password
