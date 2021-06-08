@@ -1,0 +1,36 @@
+version: '3'
+        
+services:
+  server:
+    image: etherpad/etherpad
+    container_name: etherpad
+    environment:
+        - USER_UID=1000
+        - USER_GID=1000
+        - DB_TYPE=postgres
+        - DB_HOST=etherpaddb
+        - DB_PORT=5432
+        - DB_NAME=example
+        - DB_USER=user
+        - DB_PASS=example
+        - ADMIN_PASSWORD=supersecret
+    restart: always
+    privileged: true
+    volumes:
+        # - ./etherpad_data:/opt/etherpad-lite/var
+        - /etc/localtime:/etc/localtime
+    ports:
+        - "9001:9001"
+    depends_on:
+        - db
+
+  db:
+    image: postgres
+    restart: always
+    container_name: etherpaddb
+    environment:
+        POSTGRES_PASSWORD: example
+        POSTGRES_USER: user
+        POSTGRES_DB: example
+    volumes:
+        - ./db:/var/lib/postgresql/data
