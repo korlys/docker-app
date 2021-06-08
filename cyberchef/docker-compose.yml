@@ -1,0 +1,12 @@
+version: '3'  
+services:
+  server:
+    image: mpepping/cyberchef
+    container_name: cyberchef
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    ports:
+      - "8000:8000"
