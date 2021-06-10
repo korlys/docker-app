@@ -1,0 +1,5 @@
+{$domain}
+
+reverse_proxy {
+  to web:80
+}
