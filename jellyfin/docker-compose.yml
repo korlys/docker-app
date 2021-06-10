@@ -18,4 +18,4 @@ services:
     environment:
       - USER_UID=1000
       - USER_GID=1000
-      - JELLYFIN_PublishedServerUrl=http://server.develop.ufs.pub
+      - JELLYFIN_PublishedServerUrl=http://域名

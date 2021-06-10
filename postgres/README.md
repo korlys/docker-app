@@ -1,11 +1,13 @@
-**TEST**
+***
+**BASE**
 
-本文档仅供测试和开发使用
+该项目作为基础应用运行
 
 **docker-compose项目**
 
 运行本文档代码需要安装[docker](https://www.runoob.com/docker/docker-tutorial.html)和[docker-compose](https://www.runoob.com/docker/docker-compose.html)
 
+***
 
 ### 运行
 
