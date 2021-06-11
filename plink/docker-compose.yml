@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  server:
+    image: rootgg/plik
+    container_name:  plik
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    volumes:
+      - ./data:/home/plik/server/files
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "8080:8080"
+
