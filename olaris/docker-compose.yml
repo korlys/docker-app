@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  server:
+    image: olaristv/olaris-server
+    container_name: olaris
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    volumes:
+      - ./home/videos:/var/media
+      - ./.config/olaris:/home/olaris/.config/olaris
+      - ./.config/rclone:/home/olaris/.config/rclone
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "8080:8080"

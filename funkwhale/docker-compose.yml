@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  server:
+    image: thetarkus/funkwhale
+    container_name: funkwhale
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - NESTED_PROXY=0
+      - FUNKWHALE_HOSTNAME=sns.oribos.cn
+    restart: always
+    privileged: true
+    volumes:
+      - ./data/data:/data
+      - ./data/music:/music:ro 
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "3030:80"
+

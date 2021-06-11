@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  server:
+    image: ogarcia/polaris
+    container_name: polaris
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    volumes:
+      - ./my/music/directory:/music
+      - ./my/polaris/cache:/var/cache/polaris
+      - ./my/polaris/data:/var/lib/polaris 
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "5050:5050"
