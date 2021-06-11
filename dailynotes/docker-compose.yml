@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  server:
+    image: m0ngr31/dailynotes
+    container_name: dailynotes
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    volumes:
+      - ./config_dir:/app/config
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "5000:5000"
+
