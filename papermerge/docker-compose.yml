@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   papermerge:
-    image: ghcr.io/linuxserver/papermerge
+    image: linuxserver/papermerge
     container_name: papermerge
     environment:
       - PUID=1000
@@ -9,8 +9,8 @@ services:
       - TZ=America/New_York
       - REDIS_URL= #optional
     volumes:
-      - ./config:/config
-      - ./data:/data
+      - ./papermerge/config:/config
+      - ./papermerge/data:/data
     ports:
-      - 8000:8000
+      - 9308:8000
     restart: unless-stopped
