@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+  filezilla:
+    image: linuxserver/filezilla
+    container_name: filezilla
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ./config:/config
+    ports:
+      - 3000:3000
+    restart: unless-stopped
