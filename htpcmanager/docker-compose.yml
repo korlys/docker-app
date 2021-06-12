@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  htpcmanager:
+    image: ghcr.io/linuxserver/htpcmanager
+    container_name: htpcmanager
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /path/to/appdata/config:/config
+    ports:
+      - 8085:8085
+    restart: unless-stopped

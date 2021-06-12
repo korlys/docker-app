@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  photoshow:
+    image: ghcr.io/linuxserver/photoshow
+    container_name: photoshow
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - <path to data>:/config
+      - <path to pictures>:/Pictures:ro
+      - <path to store thumbs>:/Thumbs
+    ports:
+      - 80:80
+    restart: unless-stopped
