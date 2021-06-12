@@ -1,0 +1,14 @@
+version: '3'
+  
+services:
+  server:
+    image: halohub/halo
+    container_name: halof
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    volumes:
+      - ~/.halo:/root/.halo
+    ports:
+      - "8090:8090"
