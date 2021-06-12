@@ -8,3 +8,8 @@
 下载代码
 
 在代码目录下，运行`docker-compose up`
+
+### 配置
+
+管理员账户 root@localhost
+密码 password
