@@ -1,0 +1,2 @@
+Application Setup
+Access the webui at http://your-ip:8080 , keep in mind that storage for this application is in your browser session not server side. Only plugin configurations will ever be stored server side.
