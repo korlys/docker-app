@@ -11,6 +11,8 @@ services:
      privileged: true
      networks:
       - sqlserver
+     volumes:
+      - ./sscms:/app/wwwroot 
      ports:
       - 1433:1433
      environment:
