@@ -12,7 +12,7 @@ services:
      networks:
       - sqlserver
      volumes:
-      - ./sscms:/app/wwwroot 
+      - ./sql1data:/var/opt/mssql
      ports:
       - 1433:1433
      environment:
