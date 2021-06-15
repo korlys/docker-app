@@ -1,0 +1,67 @@
+version: '3'
+
+networks:
+  sscms:
+    external: false
+
+services:
+  server:
+    image: sscms/core:latest
+    container_name:  sscms
+    networks:
+      - sscms
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - SSCMS_SECURITY_KEY=e2a3d303-ac9b-41ff-9154-930710af0845
+      - SSCMS_DATABASE_TYPE=MYSQL
+      - SSCMS_DATABASE_HOST=mysql
+      - SSCMS_DATABASE_PORT=3306
+      - SSCMS_DATABASE_USER=sscms
+      - SSCMS_DATABASE_PASSWORD=password
+      - SSCMS_DATABASE_NAME=sscms
+    restart: always
+    privileged: true
+    volumes:
+      - ./sscms:/app/wwwroot 
+      - /etc/localtime:/etc/localtime
+    depends_on:
+      - mysql
+    ports:
+      - "9080:80"
+  mysql:
+    image: mysql:5.7.22
+    restart: always
+    container_name: mysql
+    networks:
+      - sscms
+    ports:
+      - 9306:3306
+    privileged: true
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: sscms
+      MYSQL_USER: sscms
+      MYSQL_PASSWORD: password
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf/my.cnf:/etc/my.cnf
+
+
+    # phpmyadmin数据库管理部分，正式运行时可注释此段代码以关闭phpmyadmin运行
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    networks:
+      - sscms
+    restart: always
+    ports:
+      - 9180:80
+    environment:
+      - PMA_ARBITRARY=1
+
+    # phpmyadmin数据库管理部分 
+
+
