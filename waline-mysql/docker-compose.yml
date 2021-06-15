@@ -1,0 +1,65 @@
+# docker-compose.yml
+version: '3'
+
+networks:
+  waline:
+    external: false
+    
+services:
+  waline:
+    container_name: waline
+    image: lizheming/waline:latest
+    restart: always
+    ports:
+      - 8360:8360
+    volumes:
+      - ./data:/app/data
+    networks:
+      - waline
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_HOST: mysqlserver
+      MYSQL_PORT: 3306
+      MYSQL_DB: waline
+      MYSQL_USER: waline
+      MYSQL_PASSWORD: waline
+      # JWT_TOKEN: 'Your token'
+      # SITE_NAME: 'Your site name'
+      # SITE_URL: 'http://129.211.208.41'
+      # SECURE_DOMAINS: 'example.com'
+      # AUTHOR_EMAIL: 'mail@example.com'
+
+  mysqlserver:
+    image: mysql:5.7.22
+    restart: always
+    container_name: mysqlserver
+    networks:
+      - waline
+    ports:
+      - 9306:3306
+    privileged: true
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: waline
+      MYSQL_USER: waline
+      MYSQL_PASSWORD: waline
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf/my.cnf:/etc/my.cnf
+
+
+    # phpmyadmin数据库管理部分，正式运行时可注释此段代码以关闭phpmyadmin运行
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    networks:
+      - waline
+    restart: always
+    ports:
+      - 9180:80
+    environment:
+      - PMA_ARBITRARY=1
+
+    # phpmyadmin数据库管理部分 
