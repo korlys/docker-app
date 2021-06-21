@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  server:
+    image: cbenning/fussel:latest
+    container_name: fussel
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - WATERMARK_ENABLE=false
+      - HTTP_ROOT=/
+    restart: "no"
+    privileged: true
+    volumes:
+      - ./app/input:/input:ro
+      - ./app/build:/fussel/web/build
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "9080:80"

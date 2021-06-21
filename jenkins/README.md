@@ -13,3 +13,5 @@
 
 # jenkins
 
+
+通过添加`-Dhudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION=true` 关闭跨站请求伪造保护
