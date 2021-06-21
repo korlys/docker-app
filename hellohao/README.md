@@ -59,7 +59,7 @@
 
 ```
 #数据库账号
-spring.datasource.username=hellohao  #hellohao 需要跟mysql容器的用户名`MYSQL_USER`一直，也可以使用root账号登录
+spring.datasource.username=hellohao  #hellohao 需要跟mysql容器的用户名`MYSQL_USER`一致，也可以使用root账号登录
 #数据库密码test
 spring.datasource.password=hellohao  #hellohao 需要跟mysql容器的用户密码`MYSQL_PASSWORD`一致，也可以使用`MYSQL_ROOT_PASSWORD`root密码123456
 #数据库链接地址
