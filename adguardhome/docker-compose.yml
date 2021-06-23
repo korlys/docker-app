@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  server:
+    image: adguard/adguardhome
+    container_name: adguardhome
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    volumes:
+      - ./adguardhome/aworkdir:/opt/adguardhome/work
+      - ./adguardhome/confdir:/opt/adguardhome/conf
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "53:53"
+      - "80:80"
+      - "67:67"
+      - "443:443"
+      - "853:853"
+      - "68:68"
+      - "3000:3000"
