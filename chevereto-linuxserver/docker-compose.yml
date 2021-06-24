@@ -1,0 +1,32 @@
+version: "3.5"
+services:
+  chevereto:
+    image: linuxserver/chevereto
+    container_name: chevereto
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./app/config:/config
+      - ./app/data:/data
+    ports:
+      - 9180:80
+      - 9143:443
+    restart: unless-stopped
+  mariadb:
+    image: linuxserver/mariadb:latest
+    container_name: chevereto_mariadb
+    restart: always
+    volumes:
+      - ./db/mariadb/data:/config
+    ports:
+      - 9306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=chevereto
+      - MYSQL_USER=chevereto
+      - MYSQL_PASSWORD=password
+      - PGID=1000
+      - PUID=1000
+      - TZ=Asia/Shanghai
