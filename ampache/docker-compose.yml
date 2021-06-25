@@ -1,0 +1,35 @@
+  
+version: '3'
+
+services:
+  ampache:
+    image: ampache/ampache:latest
+    container_name: ampache
+    restart: unless-stopped
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    ports:
+      - 9680:80
+    volumes:
+      - ./data/config:/var/www/config
+      - ./data/log:/var/log/ampache
+      - ./data/media:/media
+      - ./data/mysql:/var/lib/mysql
+
+  mysql:
+    image: mysql:5.7.22
+    restart: always
+    container_name: ampachedb
+    ports:
+      - 9306:3306
+    privileged: true
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: ampache
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123456
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf/my.cnf:/etc/my.cnf

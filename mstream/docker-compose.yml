@@ -1,0 +1,15 @@
+version: "3.1"
+services:
+  mstream:
+    image: linuxserver/mstream
+    container_name: mstream
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ./app/config:/config
+      - ./app/music:/music
+    ports:
+      - 3000:3000
+    restart: unless-stopped
