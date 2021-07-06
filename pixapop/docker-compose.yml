@@ -1,7 +1,7 @@
-version: "2.1"
+version: "3.5"
 services:
   pixapop:
-    image: ghcr.io/linuxserver/pixapop
+    image: linuxserver/pixapop
     container_name: pixapop
     environment:
       - PUID=1000
@@ -10,8 +10,8 @@ services:
       - APP_USERNAME=admin #optional
       - APP_PASSWORD=admin #optional
     volumes:
-      - /path/to/config:/config
-      - /path/to/photos:/photos
+      - ./app/config:/config
+      - ./app/photos:/photos
     ports:
-      - 80:80
+      - 9381:80
     restart: unless-stopped
