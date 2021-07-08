@@ -18,7 +18,7 @@ services:
     networks:
       - hellohao
     volumes:
-      - ./app/Tbed-Pro.jar:/Tbed.jar
+      - ./app/Tbed.jar:/Tbed.jar
       - ./app/application.properties:/application.properties
       - ./data/HellohaoData:/HellohaoData/tbedlog
       - ./data/upload_tmp:/data/upload_tmp
