@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  projectsend:
+    image: linuxserver/projectsend
+    container_name: projectsend
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - MAX_UPLOAD=<5000>
+    volumes:
+      - ./app/config:/config
+      - ./app/data:/data
+    ports:
+      - 9680:80
+    restart: unless-stopped

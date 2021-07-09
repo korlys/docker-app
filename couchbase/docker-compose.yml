@@ -1,0 +1,20 @@
+version: "3.5"
+services:
+  cloud9:
+    image: couchbase
+    container_name: couchbase
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ./app/data:/opt/couchbase/var #optional
+    ports:
+      - 8091:8091
+      - 8092:8092
+      - 8093:8093
+      - 8094:8094
+      - 11210:11210
+    restart: unless-stopped
+
+    docker run -d --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase
