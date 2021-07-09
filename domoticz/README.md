@@ -1,0 +1,2 @@
+Application Setup
+To configure Domoticz, go to the IP of your docker host on the port you configured (default 8080), and add your hardware in Setup > Hardware. The user manual is available at www.domoticz.com

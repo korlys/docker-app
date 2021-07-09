@@ -7,8 +7,8 @@
 
 下载该项目目录下的相应文件，执行`docker-compose up`运行项目，或通过`docker-compose up -d`后台运行项目。通过`docker-compose down`停止项目
 
-
 ***
+
 ### 直接运行
 
 
@@ -16,6 +16,7 @@
 
 根据运行需要修改端口号和目录映射
 
+能够正常运行的项目均可以在linux docker里运行，也可以选择docker for windows wsl2版本运行
 
 
 ### 注意事项

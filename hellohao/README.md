@@ -47,7 +47,7 @@
 
 第三步. 访问phpmyadmin页面http://127.0.0.1:9180 (本文档使用的地址)，登录mysql数据库，将sql数据库文件导入`picturebed`数据库中。
 
-请注意，此处登录mysql服务器时，使用地址为**mysqlserver**即`container_name: mysqlserver`的值，数据库服务器地址不是localhost或者127.0.0.1
+请注意，此处填写phpmyadmin连接mysql服务器时，使用地址为**mysqlserver**即`container_name: mysqlserver`的值，数据库服务器地址不是localhost或者127.0.0.1
 
 第四步. 关闭数据库管理页面，使用`docker-compose down`关闭容器，将**第2步**的注释代码取消注释
 

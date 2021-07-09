@@ -1,0 +1,19 @@
+version: "3.5"
+services:
+  domoticz:
+    image: linuxserver/domoticz
+    container_name: domoticz
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - WEBROOT=domoticz #optional
+    volumes:
+      - ./app/config:/config
+    ports:
+      - 8080:8080
+      - 6144:6144
+      - 1443:1443
+    devices:
+      - <path to device>:<path to device> # For passing through USB devices.
+    restart: unless-stopped

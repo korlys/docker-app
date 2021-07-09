@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  xbackbone:
+    image: linuxserver/xbackbone
+    container_name: xbackbone
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Oslo
+    volumes:
+      - ./app/config:/config
+    ports:
+      - 80:80
+      - 443:443
+    restart: unless-stopped
