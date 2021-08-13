@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  cloudreve:
+    image: xavierniu/cloudreve
+    container_name: cloudreve
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - TZ="Asia/Shanghai" 
+    restart: unless-stopped
+    volumes:
+      - ./app/uploads:/cloudreve/uploads
+      - ./app/config:/cloudreve/config
+      - ./app/db:/cloudreve/db
+      - ./app/avatar:/cloudreve/avatar
+    ports:
+      - "9212:5212"
