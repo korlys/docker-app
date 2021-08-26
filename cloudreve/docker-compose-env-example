@@ -1,0 +1,24 @@
+# Required
+
+# > PUID & PGID
+CLOUDREVE_PUID=<PUID>
+CLOUDREVE_PGID=<PGID>
+
+# > Aria2
+ARIA2_RPC_SECRET=<SECRET>
+
+# Optional
+# But I highly recommend you keep items below as default 
+# unless you know what you are doing.
+
+# > Temp download folder for Aria2 & Cloudreve
+TEMP_FOLDER_PATH=/dockercnf/aria2/temp
+
+# > Aria2
+ARIA2_CONFIG_PATH=/dockercnf/aria2/conf
+
+# > Cloudreve
+CLOUDREVE_UPLOAD_PATH=/sharedfolders
+CLOUDREVE_CONF_PATH=/dockercnf/cloudreve/config
+CLOUDREVE_DB_PATH=/dockercnf/cloudreve/db
+CLOUDREVE_AVATAR_PATH=/dockercnf/cloudreve/avatar
