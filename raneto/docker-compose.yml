@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+  raneto:
+    image: linuxserver/raneto
+    container_name: raneto
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ./app/config:/config
+    ports:
+      - 3000:3000
+    restart: unless-stopped
