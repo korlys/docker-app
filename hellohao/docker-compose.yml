@@ -1,32 +1,69 @@
 version: '3'
 
 networks:
-  hello:
+  hellohao:
     external: false
     
 services:
   server:
-    image: openjdk:8u292-jdk-oraclelinux7
-    container_name: hello
+    image: maven:3.3-jdk-8
+    container_name: hellohao
     environment:
       - USER_UID=1000
       - USER_GID=1000
     restart: always
     privileged: true
     networks:
-      - hello
+      - hellohao
     volumes:
-      - ./hellohao:/hellohao
-      - ./Tbedmain:/Tbedmain
-      - ./data:/data/upload_tmp
-      - ./hellodata:/HellohaoData
-      - ./application.properties:/application.properties
+      - ./app/hellohao:/hellohao
+      - ./app/Tbedmain:/Tbedmain
+      - ./data/upload_tmp:/data/upload_tmp
+      - ./data/hellodata:/HellohaoData
+      - ./app/application.properties:/application.properties
       - /etc/localtime:/etc/localtime
     ports:
-      - "8088:8088"
+      - "9108:8088"
+    depends_on:
+      - mysqlserver
     command: [
         './hellohao',
         'java',
         '-jar',
         'Tbedmain'
         ]
+
+  mysqlserver:
+    image: mysql:5.7.22
+    restart: always
+    container_name: mysqlserver
+    networks:
+      - hellohao
+    ports:
+      - 9306:3306
+    privileged: true
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: picturebedb
+      MYSQL_USER: hellohao
+      MYSQL_PASSWORD: hellohao
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf/my.cnf:/etc/my.cnf
+
+
+    # phpmyadmin数据库管理部分，正式运行时可注释此段代码以关闭phpmyadmin运行
+
+  # phpmyadmin:
+  #   image: phpmyadmin
+  #   container_name: phpmyadmin
+  #   networks:
+  #     - hellohao
+  #   restart: always
+  #   ports:
+  #     - 9180:80
+  #   environment:
+  #     - PMA_ARBITRARY=1
+
+    # phpmyadmin数据库管理部分 
