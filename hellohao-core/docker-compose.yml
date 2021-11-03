@@ -18,13 +18,12 @@ services:
     networks:
       - hellohao
     volumes:
-      - ./app/Tbed.jar:/Tbed.jar
-      - ./app/application.properties:/application.properties
-      - ./data/HellohaoData:/HellohaoData/tbedlog
-      - ./data/upload_tmp:/data/upload_tmp
+      - ./server/hellohao:/hellohao
+      - ./server/TbedCore:/TbedCore
+      - ./server/application.properties:/application.properties
       - /etc/localtime:/etc/localtime
     ports:
-      - "8088:8088"
+      - "10088:10088"
     command: [
         './hellohao',
         'java',
@@ -36,6 +35,17 @@ services:
         ]
 
   # hellohao容器运行部分，第一次运行可将此部分注释
+
+  redis:
+      image: redis:latest
+      container_name: redis
+      networks:
+        - hellohao
+      command: redis-server --requirepass 123456
+      restart: always
+      ports:
+        - "6379:6379"
+
 
   mysqlserver:
     image: mysql:5.7.22
@@ -49,7 +59,7 @@ services:
     environment:
       TZ: Asia/Shanghai
       MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: picturebed
+      MYSQL_DATABASE: tbed_core
       MYSQL_USER: hellohao
       MYSQL_PASSWORD: hellohao
     volumes:
