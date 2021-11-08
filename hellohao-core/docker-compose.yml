@@ -37,14 +37,14 @@ services:
   # hellohao容器运行部分，第一次运行可将此部分注释
 
   redis:
-      image: redis:latest
-      container_name: redis
-      networks:
-        - hellohao
-      command: redis-server --requirepass 123456
-      restart: always
-      ports:
-        - "6379:6379"
+    image: redis:latest
+    container_name: redis
+    networks:
+      - hellohao
+    command: redis-server --requirepass 123456
+    restart: always
+    ports:
+      - "6379:6379"
 
 
   mysqlserver:
