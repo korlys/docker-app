@@ -10,7 +10,8 @@ services:
     restart: always
     privileged: true
     volumes:
+      - ./app/Deploy:/app/Deploy
+      - ./app/appdata:/app/appdata
       - /etc/localtime:/etc/localtime
     ports:
       - "9060:1066"
-
