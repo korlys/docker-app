@@ -17,7 +17,6 @@ services:
       - springboot
     volumes:
       - ./app/app.jar:/app.jar
-      - ./app/list:/list
       - /etc/localtime:/etc/localtime
     ports:
       - "9770:9090"
