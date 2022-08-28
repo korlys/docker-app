@@ -11,7 +11,7 @@ services:
     environment:
       - USER_UID=1000
       - USER_GID=1000
-      - PASSWORD=dg170MH361802
+      - PASSWORD=password
     restart: always
     privileged: true
     networks:
