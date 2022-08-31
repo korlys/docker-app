@@ -1,0 +1,22 @@
+version: '3.9'
+
+networks:
+  microsoftadmin:
+    external: false
+    
+services:
+  server:
+    image: logr/microsoft:latest
+    container_name: microsoft-admin
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    privileged: true
+    networks:
+      - microsoftadmin
+    volumes:
+      - ./app/config:/config
+      - ./app/microsoft/db:/root/.graph/db
+    ports:
+      - "8099:8099"

@@ -1,0 +1,14 @@
+version: '3.9'
+  
+services:
+  server:
+    image: mattermost/focalboard
+    container_name: focalboard
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    # volumes:
+    #   - ./app/data:/opt/focalboard
+    ports:
+      - "8000:8000"

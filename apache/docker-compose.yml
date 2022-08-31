@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  apache:
+    image: 'bitnami/apache:latest'
+    environment:
+      - APACHE_HTTP_PORT_NUMBER=8080
+    ports:
+      - '9480:8080'
+      - '9143:8443'
+    volumes:
+      - ./app/my_vhost.conf:/vhosts/my_vhost.conf:ro
+      # - ./app/httpd.conf:/opt/bitnami/apache/conf/httpd.conf
+      - ./app/apache-certs:/certs
+      - ./public:/app
